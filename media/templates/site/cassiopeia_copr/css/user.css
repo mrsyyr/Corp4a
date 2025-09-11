@@ -1,0 +1,1343 @@
+@charset "UTF-8";
+/*prev -6% 97%*/
+:root {
+  interpolate-size: allow-keywords;
+  --mad-cl-lime: #c1d549;
+  --mad-cl-orange: #f7931d;
+  --mad-cl-teal: #0bb0be;
+  --mad-cl-dark-green: #2b5973;
+  --mad-cl-light-grey: #f1f1f2;
+  --mad-cl-lightish-grey: #e4ebef; /*conc new*/
+  --mad-cl-mid-grey: #afafb2;
+  --mad-cl-dark-grey: #6e6e70;
+  --mad-cl-white: #ffffff;
+  --mad-cl-teal2: #40d4db; /*conc new*/
+  --mad-cl-light-teal: #6fd1d9; /*conc new*/
+  --mad-cl-very-light-teal:#c2eaf0;
+  --mad-cl-beaumont: #145a76; /*155b77*/ /*conc new*/
+  --mad-cl-mid-teal: #5fb5c1; /*invest pitch*/
+  --mad-cl-selected:var(--mad-cl-teal);
+  --mad-cl-white-tr: rgba(256,256,256,1);
+  --mad-cl-heading: var(--mad-cl-beaumont);
+  --mad-primary-color: var(--mad-cl-dark-green);
+  --mad-link-color: var(--mad-cl-teal);
+  --mad-hover-color: var(--mad-cl-orange);
+  --mad-h1-color: var(--mad-cl-white);
+  --mad-h2-m: 150px;
+  --mad-list-sep-color: var(--mad-cl-light-grey);
+  --mad-cl-bk-callHalfBottom: var(--mad-cl-teal2);
+  --mad-cl-bk-tr-callHalfBottom: var(--mad-cl-beaumont);
+  --mad-cl-bk-callBottom: var(--mad-cl-beaumont);
+  --body-color: var(--mad-cl-dark-grey);
+  --body-bg: var(--mad-cl-white);
+  --card-lt-bg: var(--mad-cl-white);
+  --card-md-bg: var(--mad-cl-light-grey);
+  --card-dk-bg: var(--mad-cl-dark-grey);
+  --card-lt-p: var(--mad-cl-dark-grey);
+  --card-md-p: var(--mad-cl-dark-green);
+  --card-dk-p: var(--mad-cl-white);
+  --cassiopeia-color-primary: var(--mad-primary-color);
+  --cassiopeia-color-link: var(--mad-link-color);
+  --cassiopeia-color-hover: var(--mad-hover-color);
+  --cassiopeia-font-family-headings: BarlowCondensed;
+  --cassiopeia-font-weight-headings: 400;
+  --cassiopeia-font-family-body: Roboto;
+  --bs-body-color: var(--mad-primary-color);
+  --mad-bg-moon:radial-gradient(ellipse at top right, var(--mad-cl-lime) 17%, var(--mad-cl-teal2) 32%);
+  --mad-bg-dark: linear-gradient(20deg, var(--mad-cl-bk-callHalfBottom) -10%, var(--mad-cl-bk-tr-callHalfBottom) 90%);
+}
+
+/*! mad/_variables.scss */
+@font-face {
+  font-family: "abeatbykai";
+  src: url("/media/templates/site/cassiopeia_copr/fonts/abeatbykai/ABEAKRG.eot?#iefix") format("embedded-opentype"), url("/media/templates/site/cassiopeia_copr/fonts/abeatbykai/ABEAKRG.woff") format("woff"), url("/media/templates/site/cassiopeia_copr/fonts/abeatbykai/ABEAKRG.ttf") format("truetype"), url("/media/templates/site/cassiopeia_copr/fonts/abeatbykai/ABEAKRG.svg#abeatbykai") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/media/templates/site/cassiopeia_copr/fonts/roboto_regular_macroman/Roboto-Regular-webfont.eot#iefix") format("embedded-opentype"), url("/templates/it_startup/fonts/roboto_regular_macroman/Roboto-Regular-webfont.woff2") format("woff2"), url("/media/templates/site/cassiopeia_copr/fonts/roboto_regular_macroman/Roboto-Regular-webfont.woff") format("woff"), url("/templates/it_startup/fonts/roboto_regular_macroman/Roboto-Regular-webfont.ttf") format("truetype"), url("/media/templates/site/cassiopeia_copr/fonts/roboto_regular_macroman/Roboto-Regular-webfont.svg#roboto") format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/media/templates/site/cassiopeia_copr/fonts/roboto_medium_macroman/Roboto-Medium-webfont.eot#iefix") format("embedded-opentype"), url("/templates/it_startup/fonts/roboto_medium_macroman/Roboto-Medium-webfont.woff2") format("woff2"), url("/media/templates/site/cassiopeia_copr/fonts/roboto_medium_macroman/Roboto-Medium-webfont.woff") format("woff"), url("/templates/it_startup/fonts/roboto_medium_macroman/Roboto-Medium-webfont.ttf") format("truetype"), url("/media/templates/site/cassiopeia_copr/fonts/roboto_medium_macroman/Roboto-Medium-webfont.svg#roboto") format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/media/templates/site/cassiopeia_copr/fonts/roboto_bold_macroman/Roboto-Bold-webfont.eot#iefix") format("embedded-opentype"), url("/templates/it_startup/fonts/roboto_bold_macroman/Roboto-Bold-webfont.woff2") format("woff2"), url("/media/templates/site/cassiopeia_copr/fonts/roboto_bold_macroman/Roboto-Bold-webfont.woff") format("woff"), url("/templates/it_startup/fonts/roboto_bold_macroman/Roboto-Bold-webfont.ttf") format("truetype"), url("/media/templates/site/cassiopeia_copr/fonts/roboto_bold_macroman/Roboto-Bold-webfont.svg#roboto") format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "FontAwesome";
+  src: url("/media/templates/site/cassiopeia_copr/fonts/FontAwesome/fontawesome-webfont.eot?v=4.7.0");
+  src: url("/media/templates/site/cassiopeia_copr/fonts/FontAwesome/fontawesome-webfont.eot#iefix&v=4.7.0") format("embedded-opentype"), url("/media/templates/site/cassiopeia_copr/fonts/FontAwesome/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("/media/templates/site/cassiopeia_copr/fonts/FontAwesome/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("/media/templates/site/cassiopeia_copr/fonts/FontAwesome/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("/media/templates/site/cassiopeia_copr/fonts/FontAwesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BarlowCondensed";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/media/templates/site/cassiopeia_copr/fonts/BarlowCondensed-Medium.ttf") format("truetype");
+  font-display: swap;
+}
+/*@font-face {
+  font-family: "Poppins-Light";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/media/templates/site/cassiopeia_copr/fonts/Poppins-Light.ttf") format("truetype");
+  font-display: swap; }
+*/
+.conc {
+  /*.theCard { ### NB also removal of &.light etc from all the following*/
+  /*}*/
+  /*.theCard, .aBubble { ### NB also removal of &.light etc from all the following*/
+  /*}*/
+  /* home */
+  /*########## PRODUCTS ###########*/
+  /*########## PRODUCT ###########*/
+  /*########## CONSUMER ###########*/
+  /*########## Business ###########*/
+  /* ############## PROPERTY #########################*/
+  /* ############## ABOUt US #########################*/
+  /* ############### NEWS and VIEWS ######################*/
+  /* eb-post-listing__item added to Card background styles */
+  /*################# CONTACT US #########################*/
+  /*#################### Carilend home ########################*/
+  /*##################  Client Experience  ######################*/
+}
+.conc h1, .conc .h1 {
+  font-size: calc(1.375rem + 2.6vw);
+  color: var(--mad-cl-heading);
+  text-transform: uppercase;
+}
+.conc h2, .conc .h2 {
+  font-size: calc(1.325rem + 1.6vw);
+  color: var(--mad-cl-heading);
+}
+@media (min-width: 1700px) {
+  .conc h2, .conc .h2 {
+    font-size: 48.4px;
+  }
+}
+.conc h3, .conc .h3 {
+  font-size: calc(1.235rem + 1.2vw);
+  color: var(--mad-cl-heading);
+}
+.conc h4, .conc .h4 {
+  font-size: 1.7rem;
+  font-family: "roboto";
+  color: var(--mad-cl-heading);
+  text-transform: uppercase;
+}
+.conc h5, .conc .h5 {
+  font-size: 1.6rem;
+  font-family: system-ui;
+  font-weight: 400;
+  color: var(--mad-cl-heading);
+}
+.conc h6, .conc .h6 {
+  font-size: 1.4rem;
+  font-family: system-ui;
+  font-weight: 400;
+  color: var(--mad-cl-heading);
+}
+.conc p, .conc p.p, .conc ul.p > li {
+  font-size: 1.2rem;
+  font-family: system-ui;
+  font-weight: 400;
+  color: var(--mad-cl-heading);
+}
+.conc header {
+  z-index: 50;
+}
+.conc .site-grid .grid-child {
+  margin: 2rem 0;
+  column-gap: 3rem;
+  padding: 0 4em;
+}
+@media (max-width: 900px) {
+  .conc .site-grid .grid-child {
+    padding: 0;
+  }
+}
+.conc .card {
+  border: none;
+  background: none;
+  z-index: 5;
+}
+.conc .card .card-body {
+  padding: unset;
+}
+.conc .container-header {
+  display: flex;
+  padding: 0 calc(50% - (39.75% + 1.5em)); /*0 8.2%;*/
+  background: #ffffff;
+}
+.conc .container-header .mod-menu {
+  color: inherit;
+}
+.conc .container-header .mod-list li.active > a {
+  color: var(--mad-cl-selected);
+}
+.conc .container-header .icon-menu:before {
+  color: var(--mad-link-color);
+}
+.conc .container-footer {
+  color: var(--mad-cl-heading);
+}
+.conc .footer {
+  pointer-events: none;
+}
+.conc .footer .grid-child {
+  pointer-events: auto;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+@media (max-width: 975px) {
+  .conc .footer .grid-child {
+    padding-left: 2rem;
+  }
+}
+.conc .footer a:not(.btn):hover {
+  color: var(--mad-cl-orange);
+}
+.conc .site-grid .fullWidth {
+  width: 100vw;
+  position: relative;
+  margin: 0em calc(-50vw + 50%);
+  padding: 0 calc(50vw - 50%);
+  border: none;
+}
+.conc .center-x {
+  transform: translate(-25%);
+}
+.conc .bubbleCard {
+  heiXXXght: 100%;
+}
+.conc .bubbleCard .mod-custom {
+  height: 100%;
+}
+.conc .bubbleCard .text .wrap {
+  margin: 5% 10%;
+}
+.conc .bubbleCard .smallMargins .text .wrap {
+  margin: 5% 3%;
+  padding-bottom: 1rem;
+}
+.conc .bubbleCard .smallMargins li {
+  margin-left: 2.5rem;
+}
+.conc h2 {
+  padding: 2rem 1rem;
+}
+.conc .light h2, .conc .light h3, .conc .light h4, .conc .light p, .conc .light a, .conc .light ul, .conc .bg-white h2, .conc .bg-white h3, .conc .bg-white h4, .conc .bg-white p, .conc .bg-white a, .conc .bg-white ul {
+  color: var(--mad-cl-beaumont);
+}
+.conc .halfDark h2, .conc .halfDark h3, .conc .halfDark h4 {
+  color: var(--mad-cl-white);
+}
+.conc .halfDark p {
+  color: var(--mad-cl-beaumont);
+}
+.conc .dark h2, .conc .dark .h2, .conc .dark h3, .conc .dark .h3, .conc .dark h6, .conc .dark .h6, .conc .dark p, .conc .dark a {
+  color: var(--mad-cl-white);
+}
+.conc .lightOnly h2, .conc .lightOnly h3, .conc .lightOnly h4, .conc .lightOnly p, .conc .lightOnly a, .conc .lightOnly ul, .conc .bg-white h2, .conc .bg-white h3, .conc .bg-white h4, .conc .bg-white p, .conc .bg-white a, .conc .bg-white ul, .conc .bg-madLightGrey h2, .conc .bg-madLightGrey h3, .conc .bg-madLightGrey h4, .conc .bg-madLightGrey p, .conc .bg-madLightGrey a, .conc .bg-madLightGrey ul {
+  color: var(--mad-cl-beaumont);
+}
+.conc .lightOnly > h2, .conc .lightOnly > h3, .conc .lightOnly > h4, .conc .lightOnly > p, .conc .lightOnly > a, .conc .bg-white > h2, .conc .bg-white > h3, .conc .bg-white > h4, .conc .bg-white > p, .conc .bg-white > a, .conc .bg-madLightGrey > h2, .conc .bg-madLightGrey > h3, .conc .bg-madLightGrey > h4, .conc .bg-madLightGrey > p, .conc .bg-madLightGrey > a {
+  color: var(--mad-cl-beaumont) !important;
+}
+.conc .halfDarkOnly h2, .conc .halfDarkOnly h3, .conc .halfDarkOnly h4, .conc .halfDarkOnly p, .conc .halfDarkOnly a, .conc .halfDarkOnly ul, .conc .bg-madMidTeal h2, .conc .bg-madMidTeal h3, .conc .bg-madMidTeal h4, .conc .bg-madMidTeal p, .conc .bg-madMidTeal a, .conc .bg-madMidTeal ul {
+  color: var(--mad-cl-white);
+}
+.conc .darkOnly h1, .conc .darkOnly h2, .conc .darkOnly h3, .conc .darkOnly h4, .conc .darkOnly h6, .conc .darkOnly p, .conc .darkOnly a, .conc .darkOnly ul, .conc .teamMember h1, .conc .teamMember h2, .conc .teamMember h3, .conc .teamMember h4, .conc .teamMember h6, .conc .teamMember p, .conc .teamMember a, .conc .teamMember ul {
+  color: var(--mad-cl-white);
+}
+.conc .withShadow, .conc .eb-post-listing__item {
+  box-shadow: 2px 2px 7px grey;
+}
+.conc h2 {
+  padding: 2rem 1rem;
+}
+.conc .light, .conc .bg-white {
+  background: radial-gradient(ellipse at top right, var(--mad-cl-lime) 17%, var(--mad-cl-teal2) 32%);
+}
+.conc .halfDark {
+  background: linear-gradient( 0deg,var(--mad-cl-bk-callHalfBottom) 40%, var(--mad-cl-bk-tr-callHalfBottom) 90%);
+}
+.conc .dark, .conc .eb-post-listing__item {
+  background: linear-gradient(20deg, var(--mad-cl-bk-callHalfBottom) -10%, var(--mad-cl-bk-tr-callHalfBottom) 90%);
+}
+.conc .lightOnly, .conc .bg-white {
+  background: var(--mad-cl-teal2);
+}
+.conc .halfDarkOnly {
+  background: var(--mad-cl-teal2);
+}
+.conc .darkOnly, .conc.teamMember {
+  background: var(--mad-cl-beaumont);
+}
+.conc .halfDarkTopRight {
+  background: radial-gradient(ellipse at top right, var(--mad-cl-bk-tr-callHalfBottom) -6%, var(--mad-cl-bk-callHalfBottom) 53%);
+}
+.conc .bg-madLightGrey {
+  background: var(--mad-cl-lightish-grey);
+}
+.conc .bg-madMidTeal {
+  background: var(--mad-cl-mid-teal);
+}
+.conc .theCard, .conc .eb-post-listing__item {
+  border-radius: 25px;
+}
+.conc .text.middle, .conc .text.middle p, .conc ul.middle, .conc ul.middle p, .conc p.middle, .conc p.middle p, .conc h1.middle, .conc h1.middle p, .conc h2.middle, .conc h2.middle p, .conc h3.middle, .conc h3.middle p, .conc h4.middle, .conc h4.middle p {
+  text-align: center;
+}
+.conc .text.left, .conc .text.left p, .conc ul.left, .conc ul.left p, .conc p.left, .conc p.left p, .conc h1.left, .conc h1.left p, .conc h2.left, .conc h2.left p, .conc h3.left, .conc h3.left p, .conc h4.left, .conc h4.left p {
+  text-align: left;
+}
+.conc footer {
+  /*background : url(/media/templates/site/cassiopeia_copr/images/mad/PageWave.svg) no-repeat 100% 0% / 100% !important;*/
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/PageWaveMin.svg) no-repeat 100% -2px/100vw !important;
+  z-index: 4;
+  margin-top: -30vw;
+  padding-top: 30vw;
+  height: 45vw;
+}
+@media (max-width: 900px) {
+  .conc footer {
+    bXXXackground-position-y: 280px !important;
+    mXXXargin-top: -64vw;
+    pXXXadding-top: 64vw;
+  }
+}
+.conc footer .grid-child {
+  background: var(--mad-cl-lightish-grey);
+  max-width: unset;
+  padding: 2rem 0rem;
+}
+.conc .callHalfBottom {
+  padding-bottom: 25px;
+  height: 100%;
+}
+.conc .theCard .allInside.wrap {
+  padding: 3em 3em;
+}
+.conc .borderBubble {
+  margin: -25px auto 0px auto;
+}
+.conc .aBubble.middle {
+  margin: 0px auto 0px auto;
+}
+.conc .aBubble.left {
+  margin: 0px auto 0px 0px;
+}
+.conc .borderBubble, .conc .aBubble {
+  height: calc(25px * 2);
+  border-radius: 9999px;
+  width: calc(100% - 60px);
+  max-width: fit-content; /*230px;*/
+}
+.conc .borderBubble .wrap, .conc .aBubble .wrap {
+  margin: auto;
+  width: fit-content;
+  padding: 13px;
+}
+.conc .borderBubble a, .conc .aBubble a {
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: auto;
+  letter-spacing: 2px;
+  padding: 0 8px;
+}
+.conc .outerCircle {
+  height: calc(400px * 0.8);
+  width: calc(400px * 0.8);
+  margin: calc(400px * 0.1);
+  border-radius: calc(400px * 0.4);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+@media (max-width: 400px) {
+  .conc .outerCircle {
+    height: 80vw;
+    width: 80vw;
+    margin: 10vw 0vw;
+  }
+}
+.conc .outerCircle.camera:before {
+  content: " ";
+  position: absolute;
+  left: inherit;
+  top: inherit;
+  right: inherit;
+  bottom: inherit;
+  width: inherit;
+  height: inherit;
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/CameraRings.svg) no-repeat 50%/80%;
+}
+.conc .outerCircle .innerCircle {
+  height: 60%;
+  width: 60%;
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  background: var(--mad-bg-moon);
+}
+.conc .outerCircle .innerCircle .pic {
+  height: 90%;
+  width: 90%;
+  border-radius: 50%;
+}
+.conc .outerCircle .innerCircle .pic.specMonitor {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/SpecsMonitors.jpg) no-repeat 50%/140%;
+}
+.conc .outerCircle .quotee {
+  width: 60%;
+  text-align: center;
+}
+.conc .picSide {
+  margin: auto;
+}
+.conc .textSide {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  min-width: 400px;
+  min-height: 400px;
+}
+@media (min-width: 992px) {
+  .conc .textSide {
+    width: calc(100% - 400px);
+  }
+}
+.conc .bigBubble {
+  border-radius: calc(400px / 2);
+  margin: 50px 0;
+}
+@media (min-width: 900.1px) {
+  .conc .bigBubble {
+    height: 400px;
+  }
+}
+@media (max-width: 900px) {
+  .conc .bigBubble {
+    flex-direction: column;
+    width: 400px;
+    margin: auto;
+  }
+}
+.conc .bigBubble .textSide .text {
+  margin: 5% 0;
+}
+.conc .bigBubble .textSide .text .upper, .conc .bigBubble .textSide .text .lower {
+  height: 50%;
+  width: 100%;
+}
+@media (max-width: 900px) {
+  .conc .bigBubble .textSide .text .upper, .conc .bigBubble .textSide .text .lower {
+    height: 50%;
+    width: 100%;
+  }
+}
+.conc .bigBubble .textSide .text h2, .conc .bigBubble .textSide .text h3 {
+  padding: 1rem 0rem;
+}
+.conc .bigBubble .textSide .text p {
+  font-size: 1.1rem;
+}
+.conc .bigBubble .textSide .text div[class*=poly] {
+  position: relative;
+  height: 100%;
+  width: 180px;
+}
+.conc .bigBubble .textSide .text div[class*=poly][class*=Right] {
+  float: right;
+}
+.conc .bigBubble .textSide .text div[class*=poly][class*=Left] {
+  float: left;
+}
+@media (max-width: 900px) {
+  .conc .bigBubble .textSide .text div[class*=polyTop] {
+    display: none;
+  }
+  .conc .bigBubble .textSide .text div[class*=polyBottom] {
+    margin-top: 1rem;
+  }
+  .conc .bigBubble .textSide .text div[class*=poly] {
+    height: 180px;
+    width: 50%;
+  }
+  .conc .bigBubble .textSide .text .polyBottomLeft {
+    shape-outside: polygon(0% 0%, 0% 100%, 100% 100%, 69% 95%, 41% 81%, 19% 59%, 5% 31%) !important;
+  }
+  .conc .bigBubble .textSide .text .polyBottomLeft.before {
+    display: none;
+  }
+  .conc .bigBubble .textSide .text .polyBottomLeft.after {
+    clear: both;
+  }
+}
+@media (min-width: 900.1px) {
+  .conc .bigBubble .textSide .text .polyBottomLeft.after {
+    display: none;
+  }
+}
+.conc .bigBubble .textSide .text .polyTopRight {
+  shape-outside: polygon(0% 0%, 100% 0%, 100% 100%, 95% 69%, 81% 41%, 69% 19%, 31% 5%);
+}
+.conc .bigBubble .textSide .text .polyBottomRight {
+  shape-outside: polygon(100% 0%, 100% 100%, 0% 100%, 31% 95%, 59% 81%, 81% 59%, 95% 31%);
+}
+.conc .bigBubble .textSide .text .polyTopLeft {
+  shape-outside: polygon(0% 0%, 0% 100%, 100% 100%, 94% 69%, 81% 41%, 59% 19%, 31% 6%);
+}
+.conc .bigBubble .textSide .text .polyBottomLeft {
+  shape-outside: polygon(100% 0%, 0% 0%, 0% 100%, 31% 95%, 59% 81%, 81% 59%, 95% 31%);
+}
+@media (max-width: 900px) {
+  .conc .bigBubble .textSide .text {
+    padding: 0rem 3rem 0rem 3rem !important;
+    margin: 0;
+  }
+  .conc .bigBubble .textSide .text .aBubble {
+    margin: auto;
+  }
+}
+.conc .bigBubble.light {
+  background: var(--mad-cl-lightish-grey);
+}
+.conc .bigBubble.light .outerCircle {
+  background: var(--mad-cl-beaumont);
+}
+.conc .bigBubble.light .right .text p, .conc .bigBubble.light .right .text li {
+  color: var(--mad-cl-beaumont);
+}
+.conc .bigBubble.dark {
+  background: var(--mad-cl-beaumont);
+}
+.conc .bigBubble.dark .outerCircle {
+  background: var(--mad-cl-lightish-grey);
+}
+.conc .bigBubble.dark .right .text p, .conc .bigBubble.dark .right .text li {
+  color: var(--mad-cl-white);
+}
+.conc .twoByTwo {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+}
+.conc .twoByTwo > div {
+  flex-basis: 34%;
+  margin: 1.7rem;
+}
+@media (max-width: 600px) {
+  .conc .twoByTwo > div {
+    margin: 1.7rem 0;
+  }
+}
+.conc .beforeTwoByFour {
+  padding: 4rem 0rem;
+}
+.conc .beforeTwoByFour .icon {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/GiantGrowthColumns.jpg) no-repeat 50% calc(50% + 10px)/contain;
+  height: 18rem;
+}
+.conc .twoByFour {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+}
+.conc .twoByFour > .theCard {
+  flex-basis: 40%;
+  display: flex;
+  margin: 1.7rem;
+  border-radius: 9999px;
+  height: 5rem;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  min-width: 293px;
+}
+@media (max-width: 600px) {
+  .conc .twoByFour > .theCard {
+    margin: 1.7rem 0;
+  }
+}
+.conc .twoByFour > .theCard .wrap {
+  height: 100%;
+  max-width: calc(100% - 5rem);
+}
+.conc .twoByFour > .theCard .wrap .text {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 2rem 0 2rem;
+}
+.conc .twoByFour > .theCard .wrap .text h4 {
+  font-family: var(--cassiopeia-font-family-headings);
+  font-size: 1.2rem;
+}
+.conc .twoByFour > .theCard .icon {
+  height: 3rem;
+  width: 3rem;
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/WhiteArrowMoon.svg) no-repeat 50% 50%/100%;
+  border-radius: 9999px;
+  position: relative;
+  right: 1rem;
+  transform: rotate(-45deg);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.conc .aBubble.skeletonBubble {
+  border: solid white 2px;
+  height: 70px;
+  width: 100%;
+  min-width: max-content;
+}
+.conc .aBubble.skeletonBubble .wrap {
+  padding: 18px;
+}
+.conc .aBubble.skeletonBubble a {
+  text-transform: none;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  padding: 0 10px;
+}
+.conc .specialTick li {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/tickWhiteOnGreen.svg) no-repeat 0px center/25px;
+  padding-left: 35px;
+  list-style-type: none;
+}
+.conc.topPageWave .site-grid {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/PageWave.svg) no-repeat 0% 0%/107%;
+}
+.conc.topPageWaveDark .site-grid {
+  width: 100vw;
+  position: relative;
+  margin: 0em calc(-50vw + 50%);
+  padding: 0 calc(50vw - 50%);
+  border: none;
+  background: var(--mad-cl-beaumont) url(/media/templates/site/cassiopeia_copr/images/mad/PageWaveWhite.svg) no-repeat 50% 459px/104%;
+}
+.conc .gXXXXreyPageWave:before {
+  content: " ";
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/PageWave.svg) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.conc .gXXXXreyPageWave:before.Pos1 {
+  top: -32vw;
+  bottom: -350px;
+  left: 0px;
+  right: 0px;
+}
+.conc *[class*=moonPos]:before {
+  content: " ";
+  position: absolute;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  background: var(--mad-bg-moon);
+  z-index: -5;
+  max-width: 370px;
+  max-height: 370px;
+}
+.conc .moonPos1:before {
+  top: 24%;
+  left: 66%;
+}
+.conc .moonPos2:before {
+  top: 83%;
+  left: 2%;
+}
+.conc .moonPos3:before {
+  top: 10%;
+  left: -36%;
+}
+.conc .moonPos4:before {
+  top: -8vw;
+  left: 69%;
+}
+.conc .moonPos5:before {
+  top: -20px;
+  left: unset;
+  right: 10%;
+  width: 100px;
+  height: 100px;
+}
+.conc .moonPos6:before {
+  top: 88%;
+  left: unset;
+  right: 30%;
+  width: 100px;
+  height: 100px;
+}
+.conc .moonPos7:before {
+  top: -12vw;
+  left: 55%;
+  width: 300px;
+  height: 300px;
+}
+.conc .moonPos8:before {
+  top: 860px;
+  right: 5%;
+  width: 300px;
+  height: 300px;
+}
+.conc .moonPos9:before {
+  top: -100px;
+  right: -70px;
+}
+.conc .bottomNarrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  margin: 2rem 0rem;
+}
+@media (max-width: 900px) {
+  .conc .bottomNarrow {
+    align-content: space-around;
+  }
+}
+.conc .bottomNarrow .wrap {
+  max-width: 400px;
+}
+.conc .bottomNarrow p.h6 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  padding: 1em 0;
+}
+.conc.bottom-bBeforePic .container-bottom-b:before {
+  content: " ";
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/laptopBricks.jpg) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 360px;
+  bottom: -2rem;
+  left: calc(50% - 50vw);
+  right: calc(50% - 50vw);
+  z-index: 3;
+}
+.conc.greyDot.home .container-top-d:before, .conc.greyDot.products .container-bottom-d:before, .conc.greyDot.cariCase .container-bottom-c:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: -85px;
+  /* top: 50px; */
+  margin-top: 100px;
+  width: 150px;
+  height: 150px;
+  background: var(--mad-cl-lightish-grey);
+  border-radius: 9999px;
+  z-index: 5;
+}
+.conc .textAndImage {
+  min-height: 33vw;
+}
+.conc .textAndImage .title.left {
+  padding-top: 0vw;
+}
+.conc .textAndImage h1:first-child {
+  margin-top: 1rem;
+}
+.conc .blockWithScript .block {
+  bXXXorder-radius: 25px;
+  padding: 30px 25px;
+}
+.conc .blockWithScript .script {
+  border-radius: 1000px;
+  padding: 60px;
+  text-align: center;
+}
+.conc .blockWithScript .script.s370 {
+  width: 370px;
+  height: 370px;
+}
+.conc .blockWithScript .script.s350 {
+  width: 350px;
+  height: 350px;
+}
+.conc .blockWithScript .script.s330 {
+  width: 330px;
+  height: 330px;
+}
+.conc .blockWithScript .script.s310 {
+  width: 310px;
+  height: 310px;
+}
+.conc .blockWithScript .script.s290 {
+  width: 290px;
+  height: 290px;
+}
+.conc .blockWithScript .script.s270 {
+  width: 270px;
+  height: 270px;
+}
+.conc .blockWithScript .script.s250 {
+  width: 250px;
+  height: 250px;
+}
+.conc .blockWithScript .script.s230 {
+  width: 230px;
+  height: 230px;
+}
+.conc .blockWithScript .script.s210 {
+  width: 210px;
+  height: 210px;
+}
+@media (max-width: 991.9px) {
+  .conc .blockWithScript .script:first-child {
+    margin-left: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  .conc .raiseScript-1.script {
+    margin-top: -4%;
+  }
+  .conc .raiseScript-2.script {
+    margin-top: -8%;
+  }
+  .conc .raiseScript-3.script {
+    margin-top: -12%;
+  }
+  .conc .raiseScript-4.script {
+    margin-top: -20%;
+  }
+  .conc .raiseScript-5.script {
+    margin-top: -460px;
+  }
+  .conc .raiseScript-100.script {
+    margin-top: -100px;
+  }
+  .conc .raiseScript-200.script {
+    margin-top: -200px;
+  }
+  .conc .raiseScript-300.script {
+    margin-top: -300px;
+  }
+  .conc .lowerScript-1.script {
+    margin-top: 4%;
+    margin-bottom: -4%;
+  }
+  .conc .lowerScript-2.script {
+    margin-top: 8%;
+    margin-bottom: -8%;
+  }
+  .conc .lowerScript-3.script {
+    margin-top: 12%;
+    margin-bottom: -12%;
+  }
+  .conc .lowerScript-100.script {
+    margin-top: 100px;
+    margin-bottom: -100px;
+  }
+  .conc .lowerScript-200.script {
+    margin-top: 200px;
+    margin-bottom: -200px;
+  }
+  .conc .lowerScript-300.script {
+    margin-top: 300px;
+    margin-bottom: -300px;
+  }
+  .conc .leftScript-1.script {
+    margin-left: -4%;
+  }
+  .conc .leftScript-2.script {
+    margin-left: -8%;
+  }
+  .conc .leftScript-3.script {
+    margin-left: -12%;
+  }
+  .conc .leftScript-100.script {
+    margin-left: -100px !important;
+  }
+  .conc .leftScript-200.script {
+    margin-left: -200px !important;
+  }
+  .conc .leftScript-300.script {
+    margin-left: -300px !important;
+  }
+  .conc .rightScript-1.script {
+    margin-left: 4%;
+  }
+  .conc .rightScript-2.script {
+    margin-left: 8%;
+  }
+  .conc .rightScript-3.script {
+    margin-left: 12%;
+  }
+  .conc .rightScript-100.script {
+    margin-left: 100px;
+  }
+  .conc .rightScript-200.script {
+    margin-left: 200px;
+  }
+  .conc .rightScript-300.script {
+    margin-left: 300px;
+  }
+}
+.conc.home .grid-child.container-component {
+  display: none;
+}
+.conc.home .container-top-a, .conc.home .container-bottom-c {
+  flex-direction: column !important;
+}
+.conc.home .tXXXXop-a .fullWidth:before {
+  content: " ";
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/PageWave.svg) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: -32vw;
+  bottom: -350px;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+}
+.conc.home .container-top-a .textAndImage {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/LendOfficeWallet.svg) no-repeat 90% top/30%;
+  min-height: 33vw;
+}
+.conc.home .container-top-a .textAndImage .title.left {
+  padding-top: 0vw;
+}
+.conc.home .container-top-a .textAndImage h1 {
+  max-width: 70%;
+}
+.conc.home .container-top-a .textAndImage h1:first-child {
+  margin-top: 1rem;
+}
+.conc.home .twoByFourWrapper {
+  margin-top: 500px !important;
+}
+.conc.home .twoByFourWrapper .card-body {
+  margin-top: -500px;
+}
+.conc.home .container-top-d {
+  flex-wrap: wrap;
+}
+@media (min-width: 900.1px) {
+  .conc.home .container-top-d {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+.conc.home .container-bottom-a { /*hack to get the bubble behind the pic*/
+  position: relative;
+  z-index: 10;
+}
+.conc.home mXXXain h2 {
+  padding-left: 0rem;
+}
+.conc.home .container-bottom-b > div {
+  max-height: fit-content;
+}
+.conc.home .leftPara p.h6 {
+  max-width: 31rem;
+}
+.conc.home .rightPara p.h6, .conc.home li {
+  max-width: 24rem;
+}
+.conc.home .bubbleCard .icon {
+  height: 150px;
+}
+.conc.home .bubbleCard.GraFlag .icon {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/GraFlag.svg) no-repeat 50% calc(50% + 10px)/auto;
+}
+.conc.home .bubbleCard.TeamIdeasNodes .icon {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/TeamIdeasNodes.svg) no-repeat 50% calc(50% + 10px)/auto;
+}
+.conc.home .bubbleCard.HandshakeShine .icon {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/HandshakeShine.svg) no-repeat 50% calc(50% + 10px)/auto;
+}
+@media (max-width: 970px) {
+  .conc.home { /*(min-width: 600px) and*/ }
+  .conc.home.home .grid-child.container-top-c {
+    flex-direction: column;
+  }
+  .conc.home.home .grid-child.container-top-c > div {
+    margin-bottom: 5rem;
+  }
+  .conc.home main .grid-child {
+    flex-direction: column;
+  }
+  .conc.home main .grid-child .card {
+    margin: 2rem;
+  }
+}
+.conc.home .container-bottom-b .bigBubble .text h2 {
+  padding-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  color: var(--mad-cl-orange);
+}
+@media (min-width: 900px) {
+  .conc.home .container-bottom-b .bigBubble .text p {
+    padding-right: 5rem;
+  }
+}
+.conc.home .twoWide.card {
+  flex-basis: 47%;
+}
+.conc.home .grid-child.container-bottom-b {
+  flex-wrap: wrap;
+}
+.conc.home .grid-child.container-bottom-b > .card {
+  flex-basis: 100%;
+}
+.conc.home .grid-child.container-bottom-b {
+  flex-wrap: wrap;
+}
+.conc.home .twoByTwo {
+  z-index: 3;
+}
+.conc.home .twoByThreeOverlap .aBubble {
+  margin: auto;
+}
+.conc.home .twoByThreeOverlap .pushDownLeft {
+  margin-bottom: -5rem;
+}
+.conc.home .twoByThreeOverlap .rowBackwards .text {
+  margin-top: 5rem;
+}
+.conc.home .twoByThreeOverlap .rowForwards > .wrap, .conc.home .twoByThreeOverlap .rowBackwards > .wrap {
+  flex-basis: 40%;
+}
+.conc.home .twoByThreeOverlap .rowForwards > .image, .conc.home .twoByThreeOverlap .rowBackwards > .image {
+  flex-basis: 60%;
+}
+.conc.home .twoByThreeOverlap .image.theCard.mobile {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/MobileAndCreditcard.jpg) 50% 50% no-repeat;
+  min-height: 200px;
+}
+.conc.home .twoByThreeOverlap .image.theCard.finger {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/FingerCalc.jpg) no-repeat;
+  min-height: 200px;
+}
+@media (min-width: 450px) {
+  .conc.products .aBubble {
+    width: unset;
+  }
+}
+.conc.products .container-bottom-b {
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+}
+.conc.products .grid-child.container-component {
+  display: none;
+}
+.conc.products .grid-child:last-child {
+  margin-bottom: 0px;
+}
+.conc.products .comboWrap .theCard {
+  height: 7em;
+  overflow: hidden;
+  transition: height 1s;
+}
+.conc.products .comboWrap .theCard:hover {
+  height: auto;
+}
+.conc.product .container-bottom-b {
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+}
+.conc.product .grid-child.container-component {
+  display: none;
+}
+.conc.product .twoByFourWrapper {
+  margin-top: 230px !important;
+}
+.conc.product .twoByFourWrapper .card-body {
+  margin-top: -360px;
+}
+.conc.product .twoByFour > .theCard {
+  flex-direction: row-reverse;
+}
+.conc.product .twoByFour > .theCard .icon {
+  margin-left: 2rem;
+  transform: none;
+  background: var(--mad-bg-moon);
+}
+.conc.product .grid-child.container-top-c {
+  width: 100vw;
+  position: relative;
+  margin: 0em calc(-50vw + 50%);
+  padding: 0 calc(50vw - 50%);
+  border: none;
+  background: var(--mad-cl-beaumont) url(/media/templates/site/cassiopeia_copr/images/mad/PageWaveWhite.svg) no-repeat 50% 459px/104%;
+}
+.conc.product .grid-child.container-bottom-b {
+  flex-wrap: wrap;
+}
+.conc.product .grid-child.container-bottom-b > .card {
+  flex-basis: 100%;
+}
+@media (min-width: 900px) {
+  .conc.product .grid-child.container-bottom-b .bigBubble .text p {
+    padding-right: 5rem;
+  }
+}
+.conc.consumer .container-top-a .textAndImage {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/CoupleWithBoxesFromMobiles.svg) no-repeat 90% top/30%;
+  min-height: 33vw;
+}
+.conc.consumer .container-top-a .textAndImage .title.left {
+  padding-top: 0vw;
+}
+.conc.consumer .container-top-a .textAndImage h1 {
+  max-width: 70%;
+}
+.conc.business .container-top-a .textAndImage {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/BusinessCloudMad.svg) no-repeat 90% top/30%;
+  min-height: 33vw;
+}
+.conc.business .container-top-a .textAndImage .title.left {
+  padding-top: 0vw;
+}
+.conc.business .container-top-a .textAndImage h1 {
+  max-width: 70%;
+}
+.conc.business .container-bottom-b {
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+}
+.conc.business .grid-child.container-component {
+  display: none;
+}
+.conc.business .gXXXrid-child:last-child {
+  margin-bottom: 0px;
+}
+.conc.property .container-top-a .textAndImage {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/GraphHouseMad.svg) no-repeat 90% top/30%;
+  min-height: 33vw;
+}
+.conc.property .container-top-a .textAndImage .title.left {
+  padding-top: 0vw;
+}
+.conc.property .container-top-a .textAndImage h1 {
+  max-width: 70%;
+}
+.conc.aboutUs .imageTim {
+  content: url(/media/templates/site/cassiopeia_copr/images/mad/tim-simon-150x150.jpg);
+}
+.conc.aboutUs .imageSally {
+  content: url(/media/templates/site/cassiopeia_copr/images/mad/sally-johnson-150x150.jpg);
+}
+.conc.aboutUs .imageMark {
+  content: url(/media/templates/site/cassiopeia_copr/images/mad/mark-crocker-150x150.jpg);
+}
+.conc.aboutUs .imageBrian {
+  content: url(/media/templates/site/cassiopeia_copr/images/mad/brian-scott-quinn-150x150.jpg);
+}
+.conc.aboutUs .imageWesley {
+  content: url(/media/templates/site/cassiopeia_copr/images/mad/wesley-brooks-150x150.jpg);
+}
+.conc.aboutUs .teamMember {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.conc.aboutUs .teamMember .wrap {
+  flex: 20%;
+  display: flex;
+  margin: 2rem 0rem 2rem 2rem;
+}
+.conc.aboutUs .teamMember .wrap img {
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  border-radius: 25px;
+}
+@media (max-width: 400px) {
+  .conc.aboutUs .teamMember .textSide {
+    min-width: 80vw;
+    max-width: 90vw;
+  }
+}
+.conc.aboutUs .teamMember .text {
+  fXXXlex: calc(80% - 8rem);
+  margin: 2rem;
+}
+.conc.com_easyblog.view-entry .site-grid {
+  background: none;
+}
+.conc.com_easyblog.view-entry .site-grid .container-top-a {
+  display: none;
+}
+.conc.com_easyblog .grid-child.container-component {
+  z-index: 6;
+}
+.conc.com_easyblog .eb-post-listing__item {
+  padding: 2rem;
+}
+.conc.com_easyblog #eb .eb-post-title {
+  font-size: 34px;
+  line-height: 40px;
+}
+.conc.com_easyblog #eb .eb-subscribe-form:before {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/NEWS.svg) no-repeat center 10%/100%;
+  mask-image: none;
+  opacity: 20%;
+  left: 2rem;
+  right: 2rem;
+  top: 2rem;
+}
+.conc.com_easyblog h2.eb-post-title, .conc.com_easyblog .eb-post-meta time, .conc.com_easyblog .eb-post-body p {
+  color: white;
+}
+.conc.com_easyblog .fa-twitter:before {
+  content: "𝕏" !important;
+}
+.conc.contactUs .textAndImage {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/ExplainGraph.svg) no-repeat 100% top/37%;
+  min-height: 26vw;
+}
+.conc.contactUs .textAndImage .title.left {
+  padding-top: 0vw;
+}
+.conc.contactUs .textAndImage h1 {
+  max-width: 70%;
+}
+.conc.contactUs .textAndImage h1:first-child {
+  margin-top: 1rem;
+}
+.conc .form-control {
+  background: var(--mad-cl-very-light-teal); /*--mad-cl-light-teal);*/
+  color: var(--mad-cl-beaumont);
+  z-index: 10;
+  position: relative;
+}
+.conc .form-control, .conc .btn-primary.validate {
+  border-radius: 25px;
+}
+.conc.com_contact .wXXXelcome .mod-custom {
+  width: fit-content;
+  padding-right: 4rem;
+  margin: auto;
+}
+.conc.com_contact .wXXXelcome .mod-custom:bXXXXefore {
+  content: " ";
+  position: absolute;
+  display: block;
+  top: 32px;
+  right: 111px;
+  width: 4rem;
+  height: 200px;
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/ear.svg) no-repeat 100% 0px/4rem;
+  transform: rotate(16deg);
+}
+.conc.com_contact .container-banner {
+  padding: 0 5em;
+}
+.conc.com_contact .com-contact > h3 {
+  display: none;
+}
+.conc .control-group {
+  position: relative;
+  margin: 1em 0;
+  z-index: 40;
+}
+.conc.cariCase .bigBubble.custServ .left .quotee {
+  color: var(--mad-cl-beaumont);
+}
+@media (min-width: 900.1px) {
+  .conc.cariCase .bigBubble.custServ .right {
+    margin-left: -200px;
+    width: calc(100% - 200px);
+  }
+}
+.conc.cariCase .bigBubble.custServ .right .text {
+  height: 100%;
+  /*frig to get the title to 'float left'*/
+}
+@media (min-width: 900.1px) {
+  .conc.cariCase .bigBubble.custServ .right .text .upper h3:nth-of-type(1) {
+    margin-left: -45px;
+  }
+}
+.conc.cariCase .bigBubble.custServ .right .text p {
+  font-size: calc((1.235rem + 1.2vw) / 2);
+  height: 50%;
+}
+@media (min-width: 1700px) {
+  .conc.cariCase .bigBubble.custServ .right .text p {
+    font-size: 20px;
+  }
+}
+.conc.cariCase .bigBubble.custServ .right .text h3 {
+  float: left;
+  padding: 0 0.3rem 0 0;
+}
+@media (min-width: 1700px) {
+  .conc.cariCase .bigBubble.custServ .right .text h3 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 992px) {
+  .conc.cariCase .container-bottom-a {
+    flex-wrap: wrap;
+  }
+}
+.conc.cariCase .container-bottom-a .bottom-a.card:not(first-child) {
+  flex-basis: 33%;
+}
+.conc.cariCase .container-bottom-a .bottom-a.card:first-child {
+  flex-basis: 100%;
+}
+.conc.cariCase .container-bottom-a .bottom-a.card .mod-custom {
+  height: 100%;
+}
+.conc.cariCase .container-bottom-a .bottom-a.card .mod-custom .theCard {
+  height: 100%;
+}
+.conc.cariCase.greyDot .grid-child.container-bottom-c:before {
+  margin-top: 900px;
+  background: var(--mad-bg-moon);
+}
+.conc.cariCase .mad-q-p-img .mad-p {
+  padding-right: 1rem;
+}
+.conccariCase.multiCurrency .bigBubble .upper .polyTopRight {
+  height: 12rem; /*calc (100% + 3rem);*/
+}
+.conccariCase.multiCurrency .bigBubble .lower .polyBottomLeft.before {
+  height: 70%;
+}
+.conc.clientEx .container-bottom-c {
+  display: flex;
+  flex-direction: column;
+}
+.conc.clientEx .overlap-1.blockWithScript {
+  margin-bottom: -1%;
+  padding-bottom: 1%;
+}
+.conc.clientEx .overlap-2.blockWithScript {
+  margin-bottom: -2%;
+  padding-bottom: 2%;
+}
+.conc.clientEx .overlap-3.blockWithScript {
+  margin-bottom: -3%;
+  padding-bottom: 3%;
+}
+
+/*# sourceMappingURL=user.css.map */

@@ -703,3 +703,9 @@
 /README.txt
 /robots.txt.dist
 /web.config.txt
+/media/templates/site/cassiopeia_copr/images/mad
+/media/vendor
+/media/templates/site/cassiopeia_copr/scss/vendor
+/media/templates/site/cassiopeia_copr/fonts
+media/templates/site/cassiopeia_copr/blocks.tar.gz
+/media/templates/site/cassiopeia_copr/scss/blocks
