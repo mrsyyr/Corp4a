@@ -1,0 +1,125 @@
+main {
+	.rm-group {
+		background: $cl_light_grey;
+		&:before {
+			font-size: 57px;
+			position: relative;
+			height: 49px;
+			//padding-left: 20px;
+			color: $cl_mid_grey;
+			transform: rotate(90deg);
+			transform-origin: left top 0;
+			width: 0px;
+			white-space: nowrap;
+		}
+		&.rm-gp1:before {
+			content: "PROJECT SCOPE";			
+			top: 20px; //-188px;
+		}
+		&.rm-gp2:before {
+			content: "REFINE & GROW";			
+			top: 20px; //-48px;
+		}
+	}
+	.rm-bottom-point {
+		background: $cl_teal;
+		padding-top: 10px;
+		.rm-button-outer {
+			background: $cl_light_grey;
+		}
+		.rm-point {
+			height: 250px;
+		}
+		.rm-bottom-headwrap {
+			margin-top: 40px;
+		}
+	}
+	.rm-group,
+	.rm-bottom-point {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: flex-start;
+
+		@for $i from 1 through 5 {
+			.rm#{$i} {
+				.rm-button-outer, 
+				.rm-button-inner, 
+				.rm-button-text
+					{border-color: map-get($colours, $i)}
+				.rm-button-num h1,
+				h4.rm-point-header
+					{color: map-get($colours, $i)}
+			}
+		}
+		.rm-point {
+			width: 200px;
+			margin-left: 25px;
+			padding-top: 120px;	
+		}
+		.rm-button-outer {
+			border: $outer-ring solid;
+			border-radius: 200px;
+			height: 200px;
+			position: relative;
+			top: -100px;
+		}
+		.rm-button-inner {
+			width: calc(100% - ( 2 * #{$outer-gap}));
+			height: calc(100% - ( 2 * #{$outer-gap}));
+			margin: $outer-gap;
+			border: solid $inner-ring;
+			border-radius: 200px;
+		}
+		.rm-button-rim {
+			border: solid 8px white;
+			border-radius: 200px;
+			height: calc(100% - ( 2 * #{$inner-gap}));
+			width: calc(100% - ( 2 * #{$inner-gap}));
+			margin: $inner-gap;
+		}
+		.rm-button-num {
+			width: 100%;
+			height: 100%;
+			align-content: center;
+			display: flex;
+			//background: lightgrey;
+			background-image: radial-gradient(white, #d1d1d2);
+			border-radius: 200px;
+		}
+		.rm-button-num h1 {
+			margin: auto;
+			font-size: 3.6rem;
+		}
+		.rm-button-text {
+			padding-left: 20px;
+			border-left: 2px solid;
+			margin-top: -200px;
+			padding-top: 110px;
+			p:last-child {
+				margin-bottom: 0px;
+			}
+		}
+		.rm-bottom-text {
+			width: calc(80% - 35px); //calc(100% - 325px);
+			padding-left: 30px;
+			//min-width: 400px;
+			h3 {
+				color: $cl_white;
+			}
+			h4 {
+				color: $cl_darkGreen;
+				font-weight: bold;
+			}
+			p {
+				color: $cl_white;
+			}
+		}
+	}
+	.rm-gp1 {
+		padding-bottom: 10px;
+	}	
+	.rm-gp2 {
+		padding-bottom: 10px;
+	}
+}
