@@ -347,6 +347,7 @@
   border-radius: 9999px;
   width: calc(100% - 60px);
   max-width: fit-content; /*230px;*/
+  border: none;
 }
 .conc .borderBubble .wrap, .conc .aBubble .wrap {
   margin: auto;
@@ -897,8 +898,52 @@
     margin-left: 300px;
   }
 }
-.conc.home .grid-child.container-component {
+.conc.no-main .grid-child.container-component {
+  margin: 0;
+  padding: 0;
+}
+.conc.no-main .grid-child.container-component main {
   display: none;
+}
+.conc .grid-child.container-component #system-message-container {
+  position: fixed;
+  opacity: 80%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 150;
+}
+.conc .grid-child.container-component #system-message-container #plg_system_eprivacy_alert {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: white;
+}
+.conc .grid-child.container-component #system-message-container #plg_system_eprivacy_details {
+  display: none;
+}
+.conc .grid-child.container-component #system-message-container .fa-stack {
+  display: none !important;
+}
+.conc .grid-child.container-component #system-message-container .btn {
+  border: none;
+  border-radius: 25px;
+}
+.conc .grid-child.container-component #system-message-container .btn-danger {
+  background: var(--mad-cl-teal);
+}
+.conc .grid-child.container-component #system-message-container .btn-success {
+  background: var(--mad-cl-orange);
+}
+.conc .grid-child.container-component #system-message-container h5 + p, .conc .grid-child.container-component #system-message-container h5 + p + p {
+  margin: 0;
+  font-size: 1rem;
+}
+.conc .grid-child.container-component #system-message-container h5 + p + p:before {
+  content: "Please see our ";
+}
+.conc .grid-child.container-component #system-message-container h5 + p + p:after {
+  content: " for more information.";
 }
 .conc.home .container-top-a, .conc.home .container-bottom-c {
   flex-direction: column !important;
@@ -1041,9 +1086,6 @@
 .conc.products .container-bottom-b {
   flex-direction: column !important;
   flex-wrap: nowrap !important;
-}
-.conc.products .grid-child.container-component {
-  display: none;
 }
 .conc.products .grid-child:last-child {
   margin-bottom: 0px;
@@ -1338,6 +1380,9 @@
 .conc.clientEx .overlap-3.blockWithScript {
   margin-bottom: -3%;
   padding-bottom: 3%;
+}
+.conc .modal .btn-danger {
+  display: none;
 }
 
 /*# sourceMappingURL=user.css.map */

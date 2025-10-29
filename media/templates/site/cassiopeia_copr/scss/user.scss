@@ -248,6 +248,7 @@ $bigBubbleRadius:400px;
     border-radius: 9999px;
     width: calc(100% - 60px);
     max-width: fit-content; /*230px;*/
+    border:none;
     .wrap {
       margin: auto;
       width: fit-content;
@@ -609,10 +610,35 @@ $bigBubbleRadius:400px;
     .rightScript-200.script {margin-left:200px;}
     .rightScript-300.script {margin-left:300px;}
   }
-
+  &.no-main {
+    .grid-child.container-component {
+      margin: 0;
+      padding: 0;
+      main{display:none;}
+    }
+  }
+  .grid-child.container-component #system-message-container{
+    position: fixed;
+    opacity: 80%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index:150;
+    #plg_system_eprivacy_alert{margin:0;border:none;border-radius:0;background:white;}
+    #plg_system_eprivacy_details{display:none;}
+    .fa-stack {display:none !important;}
+    .btn {border:none;border-radius:25px;}
+    .btn-danger {background: var(--mad-cl-teal);}
+    .btn-success {background: var(--mad-cl-orange);}
+    h5+p,h5+p+p{margin:0;font-size:1rem;}
+    h5+p+p{
+      &:before {content: "Please see our ";}
+      &:after {content: " for more information.";}
+    }
+  }
 /* home */
   &.home {
-    .grid-child.container-component{display:none;}
+    
   .container-top-a, .container-bottom-c {flex-direction: column !important;}
   .tXXXXop-a .fullWidth:before {
     content: " ";
@@ -722,9 +748,6 @@ $bigBubbleRadius:400px;
       .aBubble{width:unset;}
     }
     .container-bottom-b {flex-direction: column !important; flex-wrap: nowrap !important;}
-    .grid-child.container-component{
-      display:none;
-    }
     .grid-child:last-child{margin-bottom: 0px;}
     .comboWrap .theCard {
       height: 7em;
@@ -991,4 +1014,5 @@ $bigBubbleRadius:400px;
     .overlap-2.blockWithScript {margin-bottom:-2%;padding-bottom:2%;}
     .overlap-3.blockWithScript {margin-bottom:-3%;padding-bottom:3%;}
   }
+  .modal .btn-danger {display:none;}
 }
