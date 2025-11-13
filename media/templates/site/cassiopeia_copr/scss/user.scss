@@ -33,6 +33,7 @@ $bigBubbleRadius:400px;
   --mad-cl-mid-teal: #5fb5c1;  /*invest pitch*/
 
   --mad-cl-selected:var(--mad-cl-teal);
+  --mad-cl-not-selected:var(--mad-cl-dark-grey);  
   --mad-cl-white-tr: rgba(256,256,256,1);
   
   --mad-cl-heading: var(--mad-cl-beaumont);
@@ -66,6 +67,8 @@ $bigBubbleRadius:400px;
   --cassiopeia-font-family-body: Roboto;
   
   --bs-body-color: var(--mad-primary-color);
+  --link-color: var(--mad-cl-not-selected);
+  
   --mad-bg-moon:#{$conc_card-back-light};
   --mad-bg-dark: #{$conc_card-back-dark};
 }
@@ -132,7 +135,9 @@ $bigBubbleRadius:400px;
     display: flex;
     padding: 0 calc(50% - ((2 * 19.875%) + 1.5em));/*0 8.2%;*/
     background: #ffffff;
-    .mod-menu {color:inherit;}
+    .mod-menu {color:inherit;
+      .metismenu-item {flex-wrap:nowrap;}
+    }
     .mod-list li.active > a{color:var(--mad-cl-selected)}
     .icon-menu:before {color: var(--mad-link-color);}
   }
@@ -897,12 +902,18 @@ $bigBubbleRadius:400px;
         right: 2rem;
         top: 2rem;
       }
+      .eb-social-button.retweet a {
+        background: url(/media/templates/site/cassiopeia_copr/images/mad/x-logo.svg) no-repeat 50% 40% / 80%;
+        background-color: black !important;
+        span{color:transparent}
+      }
     }
     h2.eb-post-title, .eb-post-meta time, .eb-post-body p {
       color: white;
     }
+
     .fa-twitter:before {
-      content: "𝕏" !important;
+      content: "" !important;
     }
   }
 
