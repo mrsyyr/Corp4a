@@ -109,7 +109,6 @@
   /*########## CONSUMER ###########*/
   /*########## Business ###########*/
   /* ############## PROPERTY #########################*/
-  /*########## MARKETS ###########*/
   /* ############## ABOUt US #########################*/
   /* ############### NEWS and VIEWS ######################*/
   /* eb-post-listing__item added to Card background styles */
@@ -1196,13 +1195,6 @@
 .conc.property .container-top-a .textAndImage h1 {
   max-width: 70%;
 }
-.conc.markets .twoByTwo .theCard li {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-.conc.markets .twoByTwo .theCard li strong {
-  color: orange;
-}
 .conc.aboutUs .imageTim {
   content: url(/media/templates/site/cassiopeia_copr/images/mad/tim-simon-150x150.jpg);
 }
@@ -1418,3 +1410,6 @@
 }
 
 /*# sourceMappingURL=user.css.map */
+
+
+.markets .twobByTwo .theCard li strong {color: orange;}

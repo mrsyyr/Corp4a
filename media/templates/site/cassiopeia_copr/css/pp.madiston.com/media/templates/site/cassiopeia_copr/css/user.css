@@ -109,7 +109,6 @@
   /*########## CONSUMER ###########*/
   /*########## Business ###########*/
   /* ############## PROPERTY #########################*/
-  /*########## MARKETS ###########*/
   /* ############## ABOUt US #########################*/
   /* ############### NEWS and VIEWS ######################*/
   /* eb-post-listing__item added to Card background styles */
@@ -979,11 +978,11 @@
   min-height: 200px;
 }
 .conc .twoByThreeOverlap .image.theCard.laptopDiscussion {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/LaptopDiscussion.svg) 50% 50%/100% no-repeat;
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/LaptopDiscussion.svg) 50% 50% no-repeat;
   min-height: 200px;
 }
 .conc .twoByThreeOverlap .image.theCard.multiTaskingLaptop {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/MultiTaskingLaptop.svg) 50% 50%/100% no-repeat;
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/MultiTaskingLaptop.svg) no-repeat;
   min-height: 200px;
 }
 .conc.home .container-top-a, .conc.home .container-bottom-c {
@@ -1195,13 +1194,6 @@
 }
 .conc.property .container-top-a .textAndImage h1 {
   max-width: 70%;
-}
-.conc.markets .twoByTwo .theCard li {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-.conc.markets .twoByTwo .theCard li strong {
-  color: orange;
 }
 .conc.aboutUs .imageTim {
   content: url(/media/templates/site/cassiopeia_copr/images/mad/tim-simon-150x150.jpg);

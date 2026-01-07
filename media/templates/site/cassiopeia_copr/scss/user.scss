@@ -187,7 +187,7 @@ $bigBubbleRadius:400px;
         p {color: var(--mad-cl-beaumont);}
     }
     .dark {
-        h2, .h2, h3, .h3, h6, .h6, p, a {color: var(--mad-cl-white);}}
+        h2, .h2, h3, .h3, h6, .h6, p, a, ul {color: var(--mad-cl-white);}}
     .lightOnly, .bg-white, .bg-madLightGrey {
         h2, h3, h4, p, a, ul {color: var(--mad-cl-beaumont);}}
     .lightOnly, .bg-white, .bg-madLightGrey {
@@ -390,6 +390,7 @@ $bigBubbleRadius:400px;
     flex-wrap: wrap;
     margin: auto;
     justify-content: center;
+    &.fat {@media (min-width:900.1px) {> div {flex-basis: 45%;}}}
     > div {
     flex-basis: 34%;
     margin: 1.7rem;
@@ -641,6 +642,37 @@ $bigBubbleRadius:400px;
       &:after {content: " for more information.";}
     }
   }
+  .twoByThreeOverlap {
+    .aBubble {margin: auto;}
+    .pushDownLeft {margin-bottom:-5rem;}
+    .rowBackwards .text{margin-top:5rem;}
+    .rowForwards,.rowBackwards {
+      & > .wrap {
+        flex-basis: 40%;
+      }
+      & > .image {
+        flex-basis: 60%;
+      }
+    }
+
+    .image.theCard.mobile {
+        background: url(#{$pic_dir}MobileAndCreditcard.jpg) 50% 50% no-repeat;
+        min-height: 200px;
+    }
+    .image.theCard.finger {
+        background: url(#{$pic_dir}FingerCalc.jpg) no-repeat;
+        min-height: 200px;
+    }
+    .image.theCard.laptopDiscussion {
+        background: url(#{$pic_dir}LaptopDiscussion.svg) 50% 50% / 100% no-repeat;
+        min-height: 200px;
+    }
+    .image.theCard.multiTaskingLaptop {
+        background: url(#{$pic_dir}MultiTaskingLaptop.svg) 50% 50% /100% no-repeat;
+        min-height: 200px;
+    }
+  }
+  
 /* home */
   &.home {
     
@@ -724,28 +756,6 @@ $bigBubbleRadius:400px;
     flex-wrap: wrap;
   }
   .twoByTwo {z-index: 3;}
-  .twoByThreeOverlap {
-    .aBubble {margin: auto;}
-    .pushDownLeft {margin-bottom:-5rem;}
-    .rowBackwards .text{margin-top:5rem;}
-    .rowForwards,.rowBackwards {
-      & > .wrap {
-        flex-basis: 40%;
-      }
-      & > .image {
-        flex-basis: 60%;
-      }
-    }
-
-    .image.theCard.mobile {
-        background: url(#{$pic_dir}MobileAndCreditcard.jpg) 50% 50% no-repeat;
-        min-height: 200px;
-    }
-    .image.theCard.finger {
-        background: url(#{$pic_dir}FingerCalc.jpg) no-repeat;
-        min-height: 200px;
-    }
-  }
   }
   /*########## PRODUCTS ###########*/
   &.products {
@@ -839,6 +849,14 @@ $bigBubbleRadius:400px;
       h1 {max-width: 70%;}
     }
 
+  }
+  /*########## MARKETS ###########*/
+  &.markets {
+    .twoByTwo .theCard li {
+      margin-top:0.5rem;
+      margin-bottom:0.5rem;
+      strong {color: orange;}
+    }
   }
   /* ############## ABOUt US #########################*/
   &.aboutUs {
