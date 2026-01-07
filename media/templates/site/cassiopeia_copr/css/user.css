@@ -970,22 +970,6 @@
 .conc .twoByThreeOverlap .rowForwards > .image, .conc .twoByThreeOverlap .rowBackwards > .image {
   flex-basis: 60%;
 }
-.conc .twoByThreeOverlap .image.theCard.mobile {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/MobileAndCreditcard.jpg) 50% 50% no-repeat;
-  min-height: 200px;
-}
-.conc .twoByThreeOverlap .image.theCard.finger {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/FingerCalc.jpg) no-repeat;
-  min-height: 200px;
-}
-.conc .twoByThreeOverlap .image.theCard.laptopDiscussion {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/LaptopDiscussion.svg) 50% 50%/100% no-repeat;
-  min-height: 200px;
-}
-.conc .twoByThreeOverlap .image.theCard.multiTaskingLaptop {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/MultiTaskingLaptop.svg) 50% 50%/100% no-repeat;
-  min-height: 200px;
-}
 .conc.home .container-top-a, .conc.home .container-bottom-c {
   flex-direction: column !important;
 }
@@ -1116,6 +1100,14 @@
 .conc.products .comboWrap .theCard:hover {
   height: auto;
 }
+.conc.products .twoByThreeOverlap .image.theCard.mobile {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/MobileAndCreditcard.jpg) 50% 50% no-repeat;
+  min-height: 200px;
+}
+.conc.products .twoByThreeOverlap .image.theCard.finger {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/FingerCalc.jpg) no-repeat;
+  min-height: 200px;
+}
 .conc.product .container-bottom-b {
   flex-direction: column !important;
   flex-wrap: nowrap !important;
@@ -1202,6 +1194,18 @@
 }
 .conc.markets .twoByTwo .theCard li strong {
   color: orange;
+}
+.conc.markets .twoByThreeOverlap .image {
+  margin-top: -5rem;
+  margin-bottom: -5rem;
+}
+.conc.markets .twoByThreeOverlap .image.theCard.laptopDiscussion {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/LaptopDiscussion.svg) 50% 50%/100% no-repeat;
+  min-height: 200px;
+}
+.conc.markets .twoByThreeOverlap .image.theCard.multiTaskingLaptop {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/MultiTaskingLaptop.svg) 50% 50%/100% no-repeat;
+  min-height: 200px;
 }
 .conc.aboutUs .imageTim {
   content: url(/media/templates/site/cassiopeia_copr/images/mad/tim-simon-150x150.jpg);

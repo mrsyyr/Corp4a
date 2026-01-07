@@ -654,23 +654,6 @@ $bigBubbleRadius:400px;
         flex-basis: 60%;
       }
     }
-
-    .image.theCard.mobile {
-        background: url(#{$pic_dir}MobileAndCreditcard.jpg) 50% 50% no-repeat;
-        min-height: 200px;
-    }
-    .image.theCard.finger {
-        background: url(#{$pic_dir}FingerCalc.jpg) no-repeat;
-        min-height: 200px;
-    }
-    .image.theCard.laptopDiscussion {
-        background: url(#{$pic_dir}LaptopDiscussion.svg) 50% 50% / 100% no-repeat;
-        min-height: 200px;
-    }
-    .image.theCard.multiTaskingLaptop {
-        background: url(#{$pic_dir}MultiTaskingLaptop.svg) 50% 50% /100% no-repeat;
-        min-height: 200px;
-    }
   }
   
 /* home */
@@ -772,6 +755,16 @@ $bigBubbleRadius:400px;
         height: auto;
       }
     }
+    .twoByThreeOverlap {
+      .image.theCard.mobile {
+          background: url(#{$pic_dir}MobileAndCreditcard.jpg) 50% 50% no-repeat;
+          min-height: 200px;
+      }
+      .image.theCard.finger {
+          background: url(#{$pic_dir}FingerCalc.jpg) no-repeat;
+          min-height: 200px;
+      }
+    }
   }
   /*########## PRODUCT ###########*/
   &.product {
@@ -857,6 +850,18 @@ $bigBubbleRadius:400px;
       margin-bottom:0.5rem;
       strong {color: orange;}
     }
+    .twoByThreeOverlap {
+      .image {margin-top:-5rem; margin-bottom:-5rem;}
+      .image.theCard.laptopDiscussion {
+          background: url(#{$pic_dir}LaptopDiscussion.svg) 50% 50% / 100% no-repeat;
+          min-height: 200px;
+      }
+      .image.theCard.multiTaskingLaptop {
+          background: url(#{$pic_dir}MultiTaskingLaptop.svg) 50% 50% /100% no-repeat;
+          min-height: 200px;
+      }
+    }
+
   }
   /* ############## ABOUt US #########################*/
   &.aboutUs {
