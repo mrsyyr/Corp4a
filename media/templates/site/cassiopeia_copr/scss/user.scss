@@ -483,7 +483,11 @@ $bigBubbleRadius:400px;
       background: var(--mad-cl-beaumont) url(#{$pic_dir}PageWaveWhite.svg) no-repeat 50% 459px /104%;}
   }
   
-
+  .waveAboveDark{
+    background: url(/media/templates/site/cassiopeia_copr/images/mad/PageWaveShortBeaumont.svg) no-repeat 0% calc(400px - 30vw) / 100vw;
+    margin-top: -360px !important;
+    padding-top: 410px !important;
+  }
   
   
   .gXXXXreyPageWave:before {
@@ -563,6 +567,12 @@ $bigBubbleRadius:400px;
     min-height: 33vw;
     .title.left {padding-top: 0vw;}
     h1:first-child{margin-top: 1rem;}
+  }
+  .imageAndText{
+    min-height: 33vw;
+    .text{
+      margin-left:35%;
+    }
   }
 
   .blockWithScript {
@@ -764,6 +774,12 @@ $bigBubbleRadius:400px;
           background: url(#{$pic_dir}FingerCalc.jpg) no-repeat;
           min-height: 200px;
       }
+      @media (max-width: 991.9px){
+        .image {
+          padding-top: 40%;
+          padding-bottom: 40%;
+        }
+      }
     }
   }
   /*########## PRODUCT ###########*/
@@ -845,19 +861,48 @@ $bigBubbleRadius:400px;
   }
   /*########## MARKETS ###########*/
   &.markets {
-    .twoByTwo .theCard li {
-      margin-top:0.5rem;
-      margin-bottom:0.5rem;
-      strong {color: orange;}
+    .container-top-a .textAndImage{
+      background: url(#{$pic_dir}IntegrationDiscussion.svg) no-repeat 94% top / 33%;
+      min-height: 27vw;
+      .title.left {padding-top: 0vw;}
+      h1 {max-width: 70%;}
+      h1:first-child{margin-top: 1rem;}
+    }
+    .imageAndText {
+      background: url(#{$pic_dir}FintechFramework.svg) no-repeat 0% top / 33%;
+    }
+
+    .twoByTwo .theCard {
+      li {
+        margin-top:0.5rem;
+        margin-bottom:0.5rem;
+        strong {color: orange;}
+      }
+      .icon {
+        height:150px;
+        @media (max-width: 991.9px) {
+          height: 210px;
+          background-position-y: calc(72% + 0px);
+        }
+      }
+      &.KeyFeatures .icon {background: url(#{$pic_dir}KeyFeatures.svg) no-repeat 50% calc(50% + 0px) / 35%;}
+      &.GlobalReach .icon {background: url(#{$pic_dir}GlobalReach.svg) no-repeat 50% calc(50% + 0px) / 35%;}
+      &.FintechChallenges .icon {background: url(#{$pic_dir}FintechChallenges.svg) no-repeat 50% calc(50% + 0px) / 35%;}
+      &.EveryMarket .icon {background: url(#{$pic_dir}EveryMarket.svg) no-repeat 50% calc(50% + 0px) / 35%;}
+
     }
     .twoByThreeOverlap {
       .image {margin-top:-5rem; margin-bottom:-5rem;}
-      .image.theCard.laptopDiscussion {
-          background: url(#{$pic_dir}LaptopDiscussion.svg) 50% 50% / 100% no-repeat;
+      .image.theCard.finTechFramework {
+          background: url(#{$pic_dir}FintechFramework.svg) 40% 80% / 80% no-repeat;
           min-height: 200px;
       }
       .image.theCard.multiTaskingLaptop {
-          background: url(#{$pic_dir}MultiTaskingLaptop.svg) 50% 50% /100% no-repeat;
+          background: url(#{$pic_dir}MultiTaskingLaptop.svg) 70% 50% /79% no-repeat;
+          min-height: 200px;
+      }
+      .image.theCard.laptopDiscussion {
+          background: url(#{$pic_dir}LaptopDiscussion.svg) 40% 50% / 80% no-repeat;
           min-height: 200px;
       }
     }

@@ -650,6 +650,11 @@
   border: none;
   background: var(--mad-cl-beaumont) url(/media/templates/site/cassiopeia_copr/images/mad/PageWaveWhite.svg) no-repeat 50% 459px/104%;
 }
+.conc .waveAboveDark {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/PageWaveShortBeaumont.svg) no-repeat 0% calc(400px - 30vw)/100vw;
+  margin-top: -360px !important;
+  padding-top: 410px !important;
+}
 .conc .gXXXXreyPageWave:before {
   content: " ";
   background: url(/media/templates/site/cassiopeia_copr/images/mad/PageWave.svg) no-repeat;
@@ -771,6 +776,12 @@
 }
 .conc .textAndImage h1:first-child {
   margin-top: 1rem;
+}
+.conc .imageAndText {
+  min-height: 33vw;
+}
+.conc .imageAndText .text {
+  margin-left: 35%;
 }
 .conc .blockWithScript .block {
   bXXXorder-radius: 25px;
@@ -1108,6 +1119,12 @@
   background: url(/media/templates/site/cassiopeia_copr/images/mad/FingerCalc.jpg) no-repeat;
   min-height: 200px;
 }
+@media (max-width: 991.9px) {
+  .conc.products .twoByThreeOverlap .image {
+    padding-top: 40%;
+    padding-bottom: 40%;
+  }
+}
 .conc.product .container-bottom-b {
   flex-direction: column !important;
   flex-wrap: nowrap !important;
@@ -1188,6 +1205,22 @@
 .conc.property .container-top-a .textAndImage h1 {
   max-width: 70%;
 }
+.conc.markets .container-top-a .textAndImage {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/IntegrationDiscussion.svg) no-repeat 94% top/33%;
+  min-height: 27vw;
+}
+.conc.markets .container-top-a .textAndImage .title.left {
+  padding-top: 0vw;
+}
+.conc.markets .container-top-a .textAndImage h1 {
+  max-width: 70%;
+}
+.conc.markets .container-top-a .textAndImage h1:first-child {
+  margin-top: 1rem;
+}
+.conc.markets .imageAndText {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/FintechFramework.svg) no-repeat 0% top/33%;
+}
 .conc.markets .twoByTwo .theCard li {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -1195,16 +1228,41 @@
 .conc.markets .twoByTwo .theCard li strong {
   color: orange;
 }
+.conc.markets .twoByTwo .theCard .icon {
+  height: 150px;
+}
+@media (max-width: 991.9px) {
+  .conc.markets .twoByTwo .theCard .icon {
+    height: 210px;
+    background-position-y: calc(72% + 0px);
+  }
+}
+.conc.markets .twoByTwo .theCard.KeyFeatures .icon {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/KeyFeatures.svg) no-repeat 50% calc(50% + 0px)/35%;
+}
+.conc.markets .twoByTwo .theCard.GlobalReach .icon {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/GlobalReach.svg) no-repeat 50% calc(50% + 0px)/35%;
+}
+.conc.markets .twoByTwo .theCard.FintechChallenges .icon {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/FintechChallenges.svg) no-repeat 50% calc(50% + 0px)/35%;
+}
+.conc.markets .twoByTwo .theCard.EveryMarket .icon {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/EveryMarket.svg) no-repeat 50% calc(50% + 0px)/35%;
+}
 .conc.markets .twoByThreeOverlap .image {
   margin-top: -5rem;
   margin-bottom: -5rem;
 }
-.conc.markets .twoByThreeOverlap .image.theCard.laptopDiscussion {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/LaptopDiscussion.svg) 50% 50%/100% no-repeat;
+.conc.markets .twoByThreeOverlap .image.theCard.finTechFramework {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/FintechFramework.svg) 40% 80%/80% no-repeat;
   min-height: 200px;
 }
 .conc.markets .twoByThreeOverlap .image.theCard.multiTaskingLaptop {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/MultiTaskingLaptop.svg) 50% 50%/100% no-repeat;
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/MultiTaskingLaptop.svg) 70% 50%/79% no-repeat;
+  min-height: 200px;
+}
+.conc.markets .twoByThreeOverlap .image.theCard.laptopDiscussion {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/LaptopDiscussion.svg) 40% 50%/80% no-repeat;
   min-height: 200px;
 }
 .conc.aboutUs .imageTim {
