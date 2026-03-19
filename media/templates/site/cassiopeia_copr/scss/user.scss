@@ -1,3 +1,16 @@
+// Bootstrap functions
+@import "../../../../vendor/bootstrap/scss/functions";
+
+// Variables, Functions and Mixins
+/*@import "tools/tools";*/
+
+// Bootstrap
+@import "../../../../vendor/bootstrap/scss/variables";
+/*@import "../../../../vendor/bootstrap/scss/bootstrap";*/
+@import "../../../../vendor/bootstrap/scss/mixins/breakpoints";
+
+
+
 $pic_dir:"/media/templates/site/cassiopeia_copr/images/mad/";
 $conc_card-back-half-dark-top-right:"radial-gradient(ellipse at top right, var(--mad-cl-bk-tr-callHalfBottom) -6%, var(--mad-cl-bk-callHalfBottom) 53%)";/*prev -6% 97%*/
 
@@ -6,6 +19,7 @@ $conc_card-back-half-dark-top-right:"radial-gradient(ellipse at top right, var(-
 $conc_card-back-light:"radial-gradient(ellipse at top right, var(--mad-cl-lime) 17%, var(--mad-cl-teal2) 32%)";
 $conc_card-back-very-light:"radial-gradient(ellipse at top right, var(--mad-cl-lime) -4%, var(--mad-cl-light-teal) 32%)";
 $conc_card-back-half-dark:"linear-gradient( 0deg,var(--mad-cl-bk-callHalfBottom) 40%, var(--mad-cl-bk-tr-callHalfBottom) 90%)";
+$conc_card-back-half-dark-reverse:"linear-gradient( 0deg, var(--mad-cl-bk-tr-callHalfBottom) 40%, var(--mad-cl-bk-callHalfBottom) 90%) !important";
 $conc_card-back-dark:"linear-gradient(20deg, var(--mad-cl-bk-callHalfBottom) -10%, var(--mad-cl-bk-tr-callHalfBottom) 90%)";
 $conc_card-back : #{$conc_card-back-dark};
 $conc_call_back:  var(--mad-cl-beaumont);
@@ -75,7 +89,16 @@ $bigBubbleRadius:400px;
 
  
 @import "blocks/mad-fonts";
-
+.h-30px {height:30px;}
+.h-40px {height:40px;}
+.h-50px {height:50px;}
+.h-60px {height:60px;}
+.h-70px {height:70px;}
+.w-30px {width:30px;}
+.w-40px {width:40px;}
+.w-50px {width:50px;}
+.w-60px {width:60px;}
+.w-70px {width:70px;}
 
 .conc {
   h1, .h1 {
@@ -122,7 +145,8 @@ $bigBubbleRadius:400px;
     margin: 2rem 0;
     column-gap: 3rem;
     padding: 0 4em;
-    @media (max-width:900px){padding:0;}
+    /*@media (max-width:900px){padding:0;}*/
+    @include media-breakpoint-down(lg) { padding:0; }
   }
   
   .card {
@@ -136,7 +160,13 @@ $bigBubbleRadius:400px;
     padding: 0 calc(50% - ((2 * 19.875%) + 1.5em));/*0 8.2%;*/
     background: #ffffff;
     .mod-menu {color:inherit;
-      .metismenu-item {flex-wrap:nowrap;}
+      .metismenu-item {
+        flex-wrap:nowrap;
+        @include media-breakpoint-between(lg, xxl){
+          font-size: 1.257vw;
+          padding: 0.5em 1.262vw;
+        }
+      }
     }
     .mod-list li.active > a{color:var(--mad-cl-selected)}
     .icon-menu:before {color: var(--mad-link-color);}
@@ -151,10 +181,17 @@ $bigBubbleRadius:400px;
       align-items: flex-start;
       justify-content: space-around;
     
-      @media(max-width:975px){padding-left:2rem;}
+      @media(max-width:991.9px){padding-left:2rem;}
     }
     a:not(.btn):hover {
       color: var(--mad-cl-orange);
+    }
+    .twitter-btn {
+      background: url(#{$pic_dir}x-logo.svg) no-repeat 50% 40% / 80%;
+      background-color: black !important;
+    }
+    .linkedIn-btn{
+      background: url(#{$pic_dir}in-logo.svg) no-repeat 50% 40% / 100%;
     }
   }
  .site-grid .fullWidth {
@@ -202,10 +239,11 @@ $bigBubbleRadius:400px;
   }
   /*.theCard, .aBubble { ### NB also removal of &.light etc from all the following*/
     h2 {padding: 2rem 1rem;}
-    .light, .bg-white {background: #{$conc_card-back-light};}
+    .light {background: #{$conc_card-back-light};}
     .halfDark {background: #{$conc_card-back-half-dark};}
+    .halfDarkReverse {background: #{$conc_card-back-half-dark-reverse};}
     .dark, .eb-post-listing__item  {background: #{$conc_card-back-dark};}
-    .lightOnly, .bg-white{background: var(--mad-cl-teal2);}
+    .lightOnly{background: var(--mad-cl-teal2);}
     .halfDarkOnly {background: var(--mad-cl-teal2);}
     .darkOnly, &.teamMember {background: var(--mad-cl-beaumont);}
     .halfDarkTopRight {background: #{$conc_card-back-half-dark-top-right};}
@@ -321,9 +359,9 @@ $bigBubbleRadius:400px;
     @media (min-width:992px){width: calc(100% - #{$bigBubbleRadius})};
   }
   .bigBubble {
-    border-radius: calc(#{$bigBubbleRadius} / 2);
+    border-radius: 9999px;
     margin: 50px 0;
-    @media (min-width: 900.1px){ height: #{$bigBubbleRadius};}
+    @media (min-width: 900.1px){ height: auto; }/*#{$bigBubbleRadius};}*/
     @media (max-width: 900px){
       flex-direction:column;
       width: #{$bigBubbleRadius};
@@ -394,7 +432,7 @@ $bigBubbleRadius:400px;
     > div {
     flex-basis: 34%;
     margin: 1.7rem;
-    @media (max-width:600px) {margin: 1.7rem 0;}
+    @media (max-width:600px) {margin: 1.7rem 1rem;}
     }
   }
   
@@ -484,12 +522,21 @@ $bigBubbleRadius:400px;
   }
   
   .waveAboveDark{
-    background: url(/media/templates/site/cassiopeia_copr/images/mad/PageWaveShortBeaumont.svg) no-repeat 0% calc(400px - 30vw) / 100vw;
+    background: url(#{$pic_dir}PageWaveShortBeaumont.svg) no-repeat 50% calc(400px - 30vw)/100vw;
     margin-top: -360px !important;
     padding-top: 410px !important;
   }
+  .waveKAboveGrey{
+    background: url(#{$pic_dir}PageWaveK.svg) no-repeat 0% 0rem / 100vw;
+    margin-top: -25vw !important;
+    padding-top: calc(25vw + 5rem) !important;
+    div[class*="mod-"] > div.fullWidth {
+      background: var(--mad-cl-lightish-grey);
+      border-top-left-radius: 10vw;
+    }
+  }
   
-  
+
   .gXXXXreyPageWave:before {
     content: " ";
     background: url(#{$pic_dir}PageWave.svg) no-repeat;
@@ -563,15 +610,28 @@ $bigBubbleRadius:400px;
       }
     }
   }
-  .textAndImage{
+  .textAndImage{ /*textAndImage should be migrated to titleAndImage for the page top, followed by a wave*/
+    /*min-height: 33vw;*/
+    .title.left {padding-top: 0vw;}
+    h1:first-child{margin-top: 1rem;}
+    
+  }
+  .titleAndImage{ 
     min-height: 33vw;
     .title.left {padding-top: 0vw;}
     h1:first-child{margin-top: 1rem;}
+    h1 {max-width: 70%;}
   }
   .imageAndText{
-    min-height: 33vw;
+    .image{
+      min-height: 20vw;
+      &.finTech{background: url(#{$pic_dir}FintechFramework.svg) no-repeat center / 75%;}
+      @media (max-width:991.9px) {min-height: 70vw;}
+    }
+
+    .image{}
     .text{
-      margin-left:35%;
+      /*margin-left:35%;*/
     }
   }
 
@@ -681,12 +741,10 @@ $bigBubbleRadius:400px;
     right: 0px;
     z-index: -1;
   }
-    .container-top-a .textAndImage{
-      background: url(#{$pic_dir}LendOfficeWallet.svg) no-repeat 90% top / 30%;
-      min-height: 33vw;
-      .title.left {padding-top: 0vw;}
-      h1 {max-width: 70%;}
-      h1:first-child{margin-top: 1rem;}
+    .container-top-a {
+      .textAndImage, .titleAndImage{
+        background: url(#{$pic_dir}LendOfficeWallet.svg) no-repeat 90% top / 30%;
+      }
     }
   
   .twoByFourWrapper {
@@ -729,6 +787,7 @@ $bigBubbleRadius:400px;
   
   .container-bottom-b {
     .bigBubble {
+      li {max-width: 40vw !important;}
       .text {
       h2 {padding-top: 0rem !important;
         margin-bottom:0rem !important;
@@ -767,18 +826,25 @@ $bigBubbleRadius:400px;
     }
     .twoByThreeOverlap {
       .image.theCard.mobile {
-          background: url(#{$pic_dir}MobileAndCreditcard.jpg) 50% 50% no-repeat;
+          background: url(#{$pic_dir}MobileAndCreditcard.jpg) no-repeat 50% 50% / 75vw;
           min-height: 200px;
       }
       .image.theCard.finger {
-          background: url(#{$pic_dir}FingerCalc.jpg) no-repeat;
+          background: url(#{$pic_dir}FingerCalc.jpg) no-repeat 50% 50% / 75vw;
           min-height: 200px;
       }
       @media (max-width: 991.9px){
         .image {
+          background-size:130%;
           padding-top: 40%;
           padding-bottom: 40%;
         }
+      }
+    }
+    .twoByFour {
+      h4 {
+        font-size: 1.4rem !important;
+        margin-bottom: 0px;
       }
     }
   }
@@ -825,21 +891,19 @@ $bigBubbleRadius:400px;
   }
     /*########## CONSUMER ###########*/
   &.consumer {
-    .container-top-a .textAndImage{
-      background: url(#{$pic_dir}CoupleWithBoxesFromMobiles.svg) no-repeat 90% top / 30%;
-      min-height: 33vw;
-      .title.left {padding-top: 0vw;}
-      h1 {max-width: 70%;}
+    .container-top-a {
+      .textAndImage, .titleAndImage{
+        background: url(#{$pic_dir}CoupleWithBoxesFromMobiles.svg) no-repeat 90% top / 30%;
+      }
     }
   }
 
   /*########## Business ###########*/
   &.business {
-    .container-top-a .textAndImage{
-      background: url(#{$pic_dir}BusinessCloudMad.svg) no-repeat 90% top / 30%;
-      min-height: 33vw;
-      .title.left {padding-top: 0vw;}
-      h1 {max-width: 70%;}
+    .container-top-a {
+      .textAndImage, .titleAndImage{
+        background: url(#{$pic_dir}BusinessCloudMad.svg) no-repeat 90% top / 30%;
+      }
     }
 
     .container-bottom-b {flex-direction: column !important; flex-wrap: nowrap !important;}
@@ -851,32 +915,33 @@ $bigBubbleRadius:400px;
 
   /* ############## PROPERTY #########################*/
   &.property {
-    .container-top-a .textAndImage{
-      background: url(#{$pic_dir}GraphHouseMad.svg) no-repeat 90% top / 30%;
-      min-height: 33vw;
-      .title.left {padding-top: 0vw;}
-      h1 {max-width: 70%;}
+    .container-top-a {
+      .textAndImage, .titleAndImage{
+        background: url(#{$pic_dir}GraphHouseMad.svg) no-repeat 90% top / 30%;
+      }
     }
-
   }
   /*########## MARKETS ###########*/
   &.markets {
-    .container-top-a .textAndImage{
-      background: url(#{$pic_dir}IntegrationDiscussion.svg) no-repeat 94% top / 33%;
-      min-height: 27vw;
-      .title.left {padding-top: 0vw;}
-      h1 {max-width: 70%;}
-      h1:first-child{margin-top: 1rem;}
+    .container-top-a {
+      .textAndImage, .titleAndImage{
+        background: url(#{$pic_dir}IntegrationDiscussion.svg) no-repeat 94% top / 33%;
+        min-height: 27vw;
+      }
     }
-    .imageAndText {
-      background: url(#{$pic_dir}FintechFramework.svg) no-repeat 0% top / 33%;
+    .imageAndText .image{
+      &.finTech.smallerPic{background-size: 61%;
+        }
+      &.multiTaskingLaptop{background: url(#{$pic_dir}MultiTaskingLaptop.svg) no-repeat center / 68%;}
+      &.laptopDiscussion{background: url(#{$pic_dir}LaptopDiscussion.svg) no-repeat center / 68%;}
+      @media (min-width: 992px) {min-height: 24vw;}
     }
 
     .twoByTwo .theCard {
       li {
         margin-top:0.5rem;
         margin-bottom:0.5rem;
-        strong {color: orange;}
+        strong {color: var(--mad-cl-orange);}
       }
       .icon {
         height:150px;
@@ -885,28 +950,31 @@ $bigBubbleRadius:400px;
           background-position-y: calc(72% + 0px);
         }
       }
-      &.KeyFeatures .icon {background: url(#{$pic_dir}KeyFeatures.svg) no-repeat 50% calc(50% + 0px) / 35%;}
-      &.GlobalReach .icon {background: url(#{$pic_dir}GlobalReach.svg) no-repeat 50% calc(50% + 0px) / 35%;}
-      &.FintechChallenges .icon {background: url(#{$pic_dir}FintechChallenges.svg) no-repeat 50% calc(50% + 0px) / 35%;}
-      &.EveryMarket .icon {background: url(#{$pic_dir}EveryMarket.svg) no-repeat 50% calc(50% + 0px) / 35%;}
+      &.KeyFeatures .icon {background: url(#{$pic_dir}KeyFeatures.svg) no-repeat 50% -15px/150px;}
+      &.GlobalReach .icon {background: url(#{$pic_dir}GlobalReach.svg) no-repeat 50% -15px/150px;}
+      &.FintechChallenges .icon {background: url(#{$pic_dir}FintechChallenges.svg) no-repeat 50% -15px/150px;}
+      &.EveryMarket .icon {background: url(#{$pic_dir}EveryMarket.svg) no-repeat 50% -15px/150px;}
 
     }
-    .twoByThreeOverlap {
+    .twoByTzzzhreeNoOverlap {
       .image {margin-top:-5rem; margin-bottom:-5rem;}
-      .image.theCard.finTechFramework {
+      .image.finTech {
           background: url(#{$pic_dir}FintechFramework.svg) 40% 80% / 80% no-repeat;
           min-height: 200px;
       }
-      .image.theCard.multiTaskingLaptop {
+      .image.multiTaskingLaptop {
           background: url(#{$pic_dir}MultiTaskingLaptop.svg) 70% 50% /79% no-repeat;
           min-height: 200px;
       }
-      .image.theCard.laptopDiscussion {
+      .image.laptopDiscussion {
           background: url(#{$pic_dir}LaptopDiscussion.svg) 40% 50% / 80% no-repeat;
           min-height: 200px;
       }
     }
-
+    .benefits{
+      strong {color: var(--mad-cl-teal);}
+    }
+    
   }
   /* ############## ABOUt US #########################*/
   &.aboutUs {
@@ -971,7 +1039,7 @@ $bigBubbleRadius:400px;
         top: 2rem;
       }
       .eb-social-button.retweet a {
-        background: url(/media/templates/site/cassiopeia_copr/images/mad/x-logo.svg) no-repeat 50% 40% / 80%;
+        background: url(#{$pic_dir}x-logo.svg) no-repeat 50% 40% / 80%;
         background-color: black !important;
         span{color:transparent}
       }
@@ -987,7 +1055,7 @@ $bigBubbleRadius:400px;
 
   /*################# CONTACT US #########################*/
   &.contactUs {
-    .textAndImage{
+    .textAndImage, .titleAndImage{
       background: url(#{$pic_dir}ExplainGraph.svg) no-repeat 100% top / 37%;
       min-height: 26vw;
       .title.left {padding-top: 0vw;}

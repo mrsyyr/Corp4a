@@ -1,3 +1,5 @@
+/*@import "tools/tools";*/
+/*@import "../../../../vendor/bootstrap/scss/bootstrap";*/
 /*prev -6% 97%*/
 :root {
   interpolate-size: allow-keywords;
@@ -98,6 +100,46 @@
   src: url("/media/templates/site/cassiopeia_copr/fonts/Poppins-Light.ttf") format("truetype");
   font-display: swap; }
 */
+.h-30px {
+  height: 30px;
+}
+
+.h-40px {
+  height: 40px;
+}
+
+.h-50px {
+  height: 50px;
+}
+
+.h-60px {
+  height: 60px;
+}
+
+.h-70px {
+  height: 70px;
+}
+
+.w-30px {
+  width: 30px;
+}
+
+.w-40px {
+  width: 40px;
+}
+
+.w-50px {
+  width: 50px;
+}
+
+.w-60px {
+  width: 60px;
+}
+
+.w-70px {
+  width: 70px;
+}
+
 .conc {
   /*.theCard { ### NB also removal of &.light etc from all the following*/
   /*}*/
@@ -166,8 +208,9 @@
   margin: 2rem 0;
   column-gap: 3rem;
   padding: 0 4em;
+  /*@media (max-width:900px){padding:0;}*/
 }
-@media (max-width: 900px) {
+@media (max-width: 991.98px) {
   .conc .site-grid .grid-child {
     padding: 0;
   }
@@ -191,6 +234,12 @@
 .conc .container-header .mod-menu .metismenu-item {
   flex-wrap: nowrap;
 }
+@media (min-width: 992px) and (max-width: 1399.98px) {
+  .conc .container-header .mod-menu .metismenu-item {
+    font-size: 1.257vw;
+    padding: 0.5em 1.262vw;
+  }
+}
 .conc .container-header .mod-list li.active > a {
   color: var(--mad-cl-selected);
 }
@@ -208,13 +257,20 @@
   align-items: flex-start;
   justify-content: space-around;
 }
-@media (max-width: 975px) {
+@media (max-width: 991.9px) {
   .conc .footer .grid-child {
     padding-left: 2rem;
   }
 }
 .conc .footer a:not(.btn):hover {
   color: var(--mad-cl-orange);
+}
+.conc .footer .twitter-btn {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/x-logo.svg) no-repeat 50% 40%/80%;
+  background-color: black !important;
+}
+.conc .footer .linkedIn-btn {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/in-logo.svg) no-repeat 50% 40%/100%;
 }
 .conc .site-grid .fullWidth {
   width: 100vw;
@@ -275,16 +331,19 @@
 .conc h2 {
   padding: 2rem 1rem;
 }
-.conc .light, .conc .bg-white {
+.conc .light {
   background: radial-gradient(ellipse at top right, var(--mad-cl-lime) 17%, var(--mad-cl-teal2) 32%);
 }
 .conc .halfDark {
   background: linear-gradient( 0deg,var(--mad-cl-bk-callHalfBottom) 40%, var(--mad-cl-bk-tr-callHalfBottom) 90%);
 }
+.conc .halfDarkReverse {
+  background: linear-gradient( 0deg, var(--mad-cl-bk-tr-callHalfBottom) 40%, var(--mad-cl-bk-callHalfBottom) 90%) !important;
+}
 .conc .dark, .conc .eb-post-listing__item {
   background: linear-gradient(20deg, var(--mad-cl-bk-callHalfBottom) -10%, var(--mad-cl-bk-tr-callHalfBottom) 90%);
 }
-.conc .lightOnly, .conc .bg-white {
+.conc .lightOnly {
   background: var(--mad-cl-teal2);
 }
 .conc .halfDarkOnly {
@@ -434,12 +493,13 @@
   }
 }
 .conc .bigBubble {
-  border-radius: calc(400px / 2);
+  border-radius: 9999px;
   margin: 50px 0;
+  /*400px;}*/
 }
 @media (min-width: 900.1px) {
   .conc .bigBubble {
-    height: 400px;
+    height: auto;
   }
 }
 @media (max-width: 900px) {
@@ -561,7 +621,7 @@
 }
 @media (max-width: 600px) {
   .conc .twoByTwo > div {
-    margin: 1.7rem 0;
+    margin: 1.7rem 1rem;
   }
 }
 .conc .beforeTwoByFour {
@@ -651,9 +711,18 @@
   background: var(--mad-cl-beaumont) url(/media/templates/site/cassiopeia_copr/images/mad/PageWaveWhite.svg) no-repeat 50% 459px/104%;
 }
 .conc .waveAboveDark {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/PageWaveShortBeaumont.svg) no-repeat 0% calc(400px - 30vw)/100vw;
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/PageWaveShortBeaumont.svg) no-repeat 50% calc(400px - 30vw)/100vw;
   margin-top: -360px !important;
   padding-top: 410px !important;
+}
+.conc .waveKAboveGrey {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/PageWaveK.svg) no-repeat 0% 0rem/100vw;
+  margin-top: -25vw !important;
+  padding-top: calc(25vw + 5rem) !important;
+}
+.conc .waveKAboveGrey div[class*=mod-] > div.fullWidth {
+  background: var(--mad-cl-lightish-grey);
+  border-top-left-radius: 10vw;
 }
 .conc .gXXXXreyPageWave:before {
   content: " ";
@@ -768,8 +837,8 @@
   border-radius: 9999px;
   z-index: 5;
 }
-.conc .textAndImage {
-  min-height: 33vw;
+.conc .textAndImage { /*textAndImage should be migrated to titleAndImage for the page top, followed by a wave*/
+  /*min-height: 33vw;*/
 }
 .conc .textAndImage .title.left {
   padding-top: 0vw;
@@ -777,11 +846,31 @@
 .conc .textAndImage h1:first-child {
   margin-top: 1rem;
 }
-.conc .imageAndText {
+.conc .titleAndImage {
   min-height: 33vw;
 }
+.conc .titleAndImage .title.left {
+  padding-top: 0vw;
+}
+.conc .titleAndImage h1:first-child {
+  margin-top: 1rem;
+}
+.conc .titleAndImage h1 {
+  max-width: 70%;
+}
+.conc .imageAndText .image {
+  min-height: 20vw;
+}
+.conc .imageAndText .image.finTech {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/FintechFramework.svg) no-repeat center/75%;
+}
+@media (max-width: 991.9px) {
+  .conc .imageAndText .image {
+    min-height: 70vw;
+  }
+}
 .conc .imageAndText .text {
-  margin-left: 35%;
+  /*margin-left:35%;*/
 }
 .conc .blockWithScript .block {
   bXXXorder-radius: 25px;
@@ -995,18 +1084,8 @@
   right: 0px;
   z-index: -1;
 }
-.conc.home .container-top-a .textAndImage {
+.conc.home .container-top-a .textAndImage, .conc.home .container-top-a .titleAndImage {
   background: url(/media/templates/site/cassiopeia_copr/images/mad/LendOfficeWallet.svg) no-repeat 90% top/30%;
-  min-height: 33vw;
-}
-.conc.home .container-top-a .textAndImage .title.left {
-  padding-top: 0vw;
-}
-.conc.home .container-top-a .textAndImage h1 {
-  max-width: 70%;
-}
-.conc.home .container-top-a .textAndImage h1:first-child {
-  margin-top: 1rem;
 }
 .conc.home .twoByFourWrapper {
   margin-top: 500px !important;
@@ -1066,6 +1145,9 @@
     margin: 2rem;
   }
 }
+.conc.home .container-bottom-b .bigBubble li {
+  max-width: 40vw !important;
+}
 .conc.home .container-bottom-b .bigBubble .text h2 {
   padding-top: 0rem !important;
   margin-bottom: 0rem !important;
@@ -1112,18 +1194,23 @@
   height: auto;
 }
 .conc.products .twoByThreeOverlap .image.theCard.mobile {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/MobileAndCreditcard.jpg) 50% 50% no-repeat;
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/MobileAndCreditcard.jpg) no-repeat 50% 50%/75vw;
   min-height: 200px;
 }
 .conc.products .twoByThreeOverlap .image.theCard.finger {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/FingerCalc.jpg) no-repeat;
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/FingerCalc.jpg) no-repeat 50% 50%/75vw;
   min-height: 200px;
 }
 @media (max-width: 991.9px) {
   .conc.products .twoByThreeOverlap .image {
+    background-size: 130%;
     padding-top: 40%;
     padding-bottom: 40%;
   }
+}
+.conc.products .twoByFour h4 {
+  font-size: 1.4rem !important;
+  margin-bottom: 0px;
 }
 .conc.product .container-bottom-b {
   flex-direction: column !important;
@@ -1165,25 +1252,11 @@
     padding-right: 5rem;
   }
 }
-.conc.consumer .container-top-a .textAndImage {
+.conc.consumer .container-top-a .textAndImage, .conc.consumer .container-top-a .titleAndImage {
   background: url(/media/templates/site/cassiopeia_copr/images/mad/CoupleWithBoxesFromMobiles.svg) no-repeat 90% top/30%;
-  min-height: 33vw;
 }
-.conc.consumer .container-top-a .textAndImage .title.left {
-  padding-top: 0vw;
-}
-.conc.consumer .container-top-a .textAndImage h1 {
-  max-width: 70%;
-}
-.conc.business .container-top-a .textAndImage {
+.conc.business .container-top-a .textAndImage, .conc.business .container-top-a .titleAndImage {
   background: url(/media/templates/site/cassiopeia_copr/images/mad/BusinessCloudMad.svg) no-repeat 90% top/30%;
-  min-height: 33vw;
-}
-.conc.business .container-top-a .textAndImage .title.left {
-  padding-top: 0vw;
-}
-.conc.business .container-top-a .textAndImage h1 {
-  max-width: 70%;
 }
 .conc.business .container-bottom-b {
   flex-direction: column !important;
@@ -1195,38 +1268,33 @@
 .conc.business .gXXXrid-child:last-child {
   margin-bottom: 0px;
 }
-.conc.property .container-top-a .textAndImage {
+.conc.property .container-top-a .textAndImage, .conc.property .container-top-a .titleAndImage {
   background: url(/media/templates/site/cassiopeia_copr/images/mad/GraphHouseMad.svg) no-repeat 90% top/30%;
-  min-height: 33vw;
 }
-.conc.property .container-top-a .textAndImage .title.left {
-  padding-top: 0vw;
-}
-.conc.property .container-top-a .textAndImage h1 {
-  max-width: 70%;
-}
-.conc.markets .container-top-a .textAndImage {
+.conc.markets .container-top-a .textAndImage, .conc.markets .container-top-a .titleAndImage {
   background: url(/media/templates/site/cassiopeia_copr/images/mad/IntegrationDiscussion.svg) no-repeat 94% top/33%;
   min-height: 27vw;
 }
-.conc.markets .container-top-a .textAndImage .title.left {
-  padding-top: 0vw;
+.conc.markets .imageAndText .image.finTech.smallerPic {
+  background-size: 61%;
 }
-.conc.markets .container-top-a .textAndImage h1 {
-  max-width: 70%;
+.conc.markets .imageAndText .image.multiTaskingLaptop {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/MultiTaskingLaptop.svg) no-repeat center/68%;
 }
-.conc.markets .container-top-a .textAndImage h1:first-child {
-  margin-top: 1rem;
+.conc.markets .imageAndText .image.laptopDiscussion {
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/LaptopDiscussion.svg) no-repeat center/68%;
 }
-.conc.markets .imageAndText {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/FintechFramework.svg) no-repeat 0% top/33%;
+@media (min-width: 992px) {
+  .conc.markets .imageAndText .image {
+    min-height: 24vw;
+  }
 }
 .conc.markets .twoByTwo .theCard li {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 .conc.markets .twoByTwo .theCard li strong {
-  color: orange;
+  color: var(--mad-cl-orange);
 }
 .conc.markets .twoByTwo .theCard .icon {
   height: 150px;
@@ -1238,32 +1306,35 @@
   }
 }
 .conc.markets .twoByTwo .theCard.KeyFeatures .icon {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/KeyFeatures.svg) no-repeat 50% calc(50% + 0px)/35%;
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/KeyFeatures.svg) no-repeat 50% -15px/150px;
 }
 .conc.markets .twoByTwo .theCard.GlobalReach .icon {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/GlobalReach.svg) no-repeat 50% calc(50% + 0px)/35%;
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/GlobalReach.svg) no-repeat 50% -15px/150px;
 }
 .conc.markets .twoByTwo .theCard.FintechChallenges .icon {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/FintechChallenges.svg) no-repeat 50% calc(50% + 0px)/35%;
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/FintechChallenges.svg) no-repeat 50% -15px/150px;
 }
 .conc.markets .twoByTwo .theCard.EveryMarket .icon {
-  background: url(/media/templates/site/cassiopeia_copr/images/mad/EveryMarket.svg) no-repeat 50% calc(50% + 0px)/35%;
+  background: url(/media/templates/site/cassiopeia_copr/images/mad/EveryMarket.svg) no-repeat 50% -15px/150px;
 }
-.conc.markets .twoByThreeOverlap .image {
+.conc.markets .twoByTzzzhreeNoOverlap .image {
   margin-top: -5rem;
   margin-bottom: -5rem;
 }
-.conc.markets .twoByThreeOverlap .image.theCard.finTechFramework {
+.conc.markets .twoByTzzzhreeNoOverlap .image.finTech {
   background: url(/media/templates/site/cassiopeia_copr/images/mad/FintechFramework.svg) 40% 80%/80% no-repeat;
   min-height: 200px;
 }
-.conc.markets .twoByThreeOverlap .image.theCard.multiTaskingLaptop {
+.conc.markets .twoByTzzzhreeNoOverlap .image.multiTaskingLaptop {
   background: url(/media/templates/site/cassiopeia_copr/images/mad/MultiTaskingLaptop.svg) 70% 50%/79% no-repeat;
   min-height: 200px;
 }
-.conc.markets .twoByThreeOverlap .image.theCard.laptopDiscussion {
+.conc.markets .twoByTzzzhreeNoOverlap .image.laptopDiscussion {
   background: url(/media/templates/site/cassiopeia_copr/images/mad/LaptopDiscussion.svg) 40% 50%/80% no-repeat;
   min-height: 200px;
+}
+.conc.markets .benefits strong {
+  color: var(--mad-cl-teal);
 }
 .conc.aboutUs .imageTim {
   content: url(/media/templates/site/cassiopeia_copr/images/mad/tim-simon-150x150.jpg);
@@ -1344,17 +1415,17 @@
 .conc.com_easyblog .fa-twitter:before {
   content: "" !important;
 }
-.conc.contactUs .textAndImage {
+.conc.contactUs .textAndImage, .conc.contactUs .titleAndImage {
   background: url(/media/templates/site/cassiopeia_copr/images/mad/ExplainGraph.svg) no-repeat 100% top/37%;
   min-height: 26vw;
 }
-.conc.contactUs .textAndImage .title.left {
+.conc.contactUs .textAndImage .title.left, .conc.contactUs .titleAndImage .title.left {
   padding-top: 0vw;
 }
-.conc.contactUs .textAndImage h1 {
+.conc.contactUs .textAndImage h1, .conc.contactUs .titleAndImage h1 {
   max-width: 70%;
 }
-.conc.contactUs .textAndImage h1:first-child {
+.conc.contactUs .textAndImage h1:first-child, .conc.contactUs .titleAndImage h1:first-child {
   margin-top: 1rem;
 }
 .conc .form-control {
